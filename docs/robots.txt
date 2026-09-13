@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jibetanoai.github.io/yametai-zukan/sitemap.xml

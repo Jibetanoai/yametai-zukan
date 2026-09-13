@@ -97,6 +97,93 @@ function relatedArticlesHtml(current, allArticles) {
     </div>`;
 }
 
+function buildVoicesSectionHtml(article) {
+  if (!site.supabaseUrl || !site.supabasePublishableKey) return "";
+  return `
+    <div class="voices-box" id="voices-box" data-slug="${escapeHtml(article.slug)}">
+      <h2 class="voices-title">💬 現場のリアルな声</h2>
+      <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、すぐに公開されます。</p>
+      <textarea id="voice-input" class="voice-textarea" placeholder="例: 人手不足で有給が取りづらい。でもやりがいはある、など(5〜1000字)" maxlength="1000"></textarea>
+      <button type="button" id="voice-submit" class="voice-submit">投稿する</button>
+      <p id="voice-status" class="voice-status" hidden></p>
+      <div id="voices-list" class="voices-list"><p class="voices-loading">声を読み込み中...</p></div>
+    </div>`;
+}
+
+function buildVoicesScript() {
+  if (!site.supabaseUrl || !site.supabasePublishableKey) return "";
+  return `
+<script>
+(function() {
+  var box = document.getElementById("voices-box");
+  if (!box) return;
+  var SUPABASE_URL = ${JSON.stringify(site.supabaseUrl)};
+  var API_KEY = ${JSON.stringify(site.supabasePublishableKey)};
+  var slug = box.getAttribute("data-slug");
+  var listEl = document.getElementById("voices-list");
+  var input = document.getElementById("voice-input");
+  var statusEl = document.getElementById("voice-status");
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderVoices(rows) {
+    if (!rows || rows.length === 0) {
+      listEl.innerHTML = "<p class=\\"voices-empty\\">まだ声が投稿されていません。最初の投稿者になってみませんか?</p>";
+      return;
+    }
+    listEl.innerHTML = rows.map(function(r) {
+      var d = new Date(r.created_at);
+      var dateStr = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+      return "<div class=\\"voice-card\\"><p>" + escapeHtml(r.body) + "</p><span class=\\"voice-date\\">" + dateStr + "</span></div>";
+    }).join("");
+  }
+
+  function loadVoices() {
+    fetch(SUPABASE_URL + "/rest/v1/voices?occupation_slug=eq." + encodeURIComponent(slug) + "&select=body,created_at&order=created_at.desc&limit=50", {
+      headers: { apikey: API_KEY, Authorization: "Bearer " + API_KEY }
+    }).then(function(r) { return r.json(); }).then(renderVoices).catch(function() {
+      listEl.innerHTML = "<p class=\\"voices-empty\\">声を読み込めませんでした。</p>";
+    });
+  }
+
+  document.getElementById("voice-submit").addEventListener("click", function() {
+    var body = input.value.trim();
+    statusEl.hidden = false;
+    if (body.length < 5) {
+      statusEl.textContent = "5文字以上で書いてください。";
+      return;
+    }
+    if (body.length > 1000) {
+      statusEl.textContent = "1000文字以内で書いてください。";
+      return;
+    }
+    statusEl.textContent = "投稿中...";
+    fetch(SUPABASE_URL + "/rest/v1/voices", {
+      method: "POST",
+      headers: {
+        apikey: API_KEY,
+        Authorization: "Bearer " + API_KEY,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal"
+      },
+      body: JSON.stringify({ occupation_slug: slug, body: body })
+    }).then(function(r) {
+      if (!r.ok) throw new Error("failed");
+      statusEl.textContent = "投稿しました。ありがとうございます!";
+      input.value = "";
+      loadVoices();
+    }).catch(function() {
+      statusEl.textContent = "投稿に失敗しました。時間をおいて試してください。";
+    });
+  });
+
+  loadVoices();
+})();
+</script>`;
+}
+
 function buildArticleHtml(article, allArticles) {
   const url = `${site.baseUrl}/articles/${article.slug}.html`;
   const bodyHtml = markdownToHtml(article.bodyMarkdown);
@@ -161,6 +248,7 @@ ${gaSnippet()}</head>
     </div>
     ${relatedArticlesHtml(article, allArticles)}
   </article>
+  ${buildVoicesSectionHtml(article)}
 </main>
 
 <footer class="site-footer">
@@ -168,7 +256,7 @@ ${gaSnippet()}</head>
   <a href="../privacy-policy.html">プライバシーポリシー</a>
   <a href="../contact.html">お問い合わせ</a>
 </footer>
-
+${buildVoicesScript()}
 </body>
 </html>
 `;

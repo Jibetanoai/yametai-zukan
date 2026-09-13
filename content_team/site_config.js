@@ -7,4 +7,8 @@ module.exports = {
   twitterHandle: null,
   googleSiteVerification: null,
   googleAnalyticsId: null,
+  // 「現場の声」投稿機能用(yametai-zukan専用のSupabaseプロジェクト)。
+  // publishableキーはRLSで保護されている前提でクライアント側に公開してよいキー。
+  supabaseUrl: "https://stoxskjlhcqatiosqrga.supabase.co",
+  supabasePublishableKey: "sb_publishable_yzdenWTxTjv43QfGql5HDQ_bIeOPukx",
 };

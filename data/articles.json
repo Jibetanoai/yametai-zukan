@@ -1,0 +1,94 @@
+{
+  "articles": [
+    {
+      "slug": "eigyou-yameru-riyuu",
+      "title": "営業職はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理",
+      "meta": "営業職の離職はなぜ話題になりやすいのか。厚生労働省の雇用動向調査や民間アンケートをもとに、公的統計で分かること・分からないことを切り分けながら、「辞めたい」と感じる理由の傾向と判断材料の整理の仕方をまとめました。",
+      "keywords": "営業 辞めたい 理由, 営業職 離職率, 営業 退職理由, 営業職 転職",
+      "createdAt": "2026-09-13T11:59:01.502Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "koumuin-yameru-riyuu-toukei",
+      "title": "公務員はなぜ辞める人が多いのか|離職の実態と退職理由を公的統計から整理",
+      "meta": "公務員の離職率は民間より低いのに「若手の退職が増えた」と言われるのはなぜか。総務省・人事院・内閣人事局の公的統計をもとに、公務員の退職理由と実態、続けるか転職かを考える判断材料を整理します。",
+      "keywords": "公務員 辞めたい理由, 公務員 離職率, 公務員 退職理由, 公務員 転職",
+      "createdAt": "2026-09-13T11:59:43.044Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "kaigoshi-yameru-riyuu-toukei",
+      "title": "介護士はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "介護職の離職率は本当に高いのか。介護労働安定センターや厚生労働省の公的統計をもとに、離職率の推移・辞める理由の上位・賃金や人手不足の背景を、比較の限界にも触れながら整理。続けるか転職するかを考える判断材料をまとめました。",
+      "keywords": "介護士 辞めたい理由, 介護職 離職率, 介護 退職理由, 介護士 転職",
+      "createdAt": "2026-09-13T11:59:46.361Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "it-engineer-yameru-riyuu",
+      "title": "ITエンジニアはなぜ「辞める人が多い」と言われるのか｜統計で見る離職の実態と、語られやすい6つの理由",
+      "meta": "ITエンジニアの離職率は本当に高いのか。厚生労働省「令和6年雇用動向調査」などの公的統計で情報通信業の数字を確認しつつ、統計と職種のズレにも注意しながら、給与・評価、多重下請け構造、学習コストなど「辞めたい」と語られやすい理由を整理します。",
+      "keywords": "ITエンジニア 辞めたい理由, ITエンジニア 離職率, 情報通信業 離職率, エンジニア 転職理由",
+      "createdAt": "2026-09-13T11:59:59.282Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "low",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "hoikushi-rishokuritsu-riyuu-toukei",
+      "title": "保育士の離職率は本当に高い?統計で見る「辞めたい理由」の実態",
+      "meta": "保育士の離職率は本当に高いのか。厚生労働省の統計や東京都の実態調査をもとに、離職率の実数、辞めたい理由の上位項目、データの限界までを整理。「続ける」「動く」を判断するための材料をまとめました。",
+      "keywords": "保育士 辞めたい理由, 保育士 離職率, 保育士 退職理由, 保育士 転職",
+      "createdAt": "2026-09-13T12:00:03.971Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "truck-driver-yameru-riyuu-toukei",
+      "title": "トラック運転手は本当に「辞める人が多い」のか?離職理由と実態を統計から整理【2026年版】",
+      "meta": "トラック運転手の離職理由を、厚労省の雇用動向調査や国交省の実態調査など公的データから整理。離職率の実際、労働時間・賃金・荷待ちなど6つの理由、2024年問題以降の変化、辞める前に確認したい判断軸まで解説します。",
+      "keywords": "トラック運転手 辞めたい理由, トラック運転手 離職率, ドライバー 転職, 物流 2024年問題",
+      "createdAt": "2026-09-13T12:01:38.916Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium"
+      }
+    }
+  ]
+}
