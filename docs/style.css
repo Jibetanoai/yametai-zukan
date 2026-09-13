@@ -1,0 +1,428 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f3f6f5;
+  --panel-bg: #ffffff;
+  --text: #1c2230;
+  --muted: #667070;
+  --accent: #2f8f7a;
+  --accent-ink: #1d5c4d;
+  --navy: #1b2740;
+  --border: #dfe6e3;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12181a;
+    --panel-bg: #1a2224;
+    --text: #ececec;
+    --muted: #98a3a1;
+    --accent: #4bbba0;
+    --accent-ink: #a6ecd9;
+    --navy: #dfe6f5;
+    --border: #2a3436;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  line-height: 1.75;
+}
+
+h1, h2, h3, .brand {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", serif;
+}
+
+a { color: var(--accent-ink); }
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-bg);
+}
+
+.site-header-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-tagline {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 0;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
+.disclosure-banner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  font-size: 11.5px;
+  color: var(--muted);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+/* ============ 記事一覧 ============ */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.article-card {
+  display: block;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.article-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.article-card-date {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.article-card h2 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  color: var(--navy);
+}
+
+.article-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 60px 20px;
+  font-size: 14px;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding-bottom: 4px;
+}
+
+.category-tab {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.category-tab:hover {
+  border-color: var(--accent);
+}
+
+.category-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--panel-bg);
+}
+
+.category-tab-count {
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+
+.category-tab.is-active .category-tab-count {
+  color: var(--accent-ink);
+  background: var(--panel-bg);
+}
+
+/* ============ おすすめ職業診断 ============ */
+.quiz-box {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.quiz-title {
+  margin: 0 0 6px;
+  font-size: 20px;
+  color: var(--navy);
+}
+
+.quiz-desc {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.quiz-axis {
+  margin-bottom: 14px;
+}
+
+.quiz-axis-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quiz-option {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.quiz-option:hover {
+  border-color: var(--accent);
+}
+
+.quiz-option.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--panel-bg);
+}
+
+.quiz-submit {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--panel-bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 28px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.15s ease;
+}
+
+.quiz-submit:hover {
+  opacity: 0.88;
+}
+
+.quiz-result {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-result-lead {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.quiz-result-card {
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.quiz-result-card:hover {
+  border-color: var(--accent);
+}
+
+.quiz-result-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  color: var(--navy);
+}
+
+.quiz-result-card p {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.quiz-result-match {
+  font-size: 11px;
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+/* ============ 記事本文 ============ */
+.article-header {
+  margin-bottom: 28px;
+}
+
+.article-date {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-size: 28px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--navy);
+}
+
+.article-body h2 {
+  font-size: 21px;
+  margin: 36px 0 14px;
+  color: var(--navy);
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+}
+
+.article-body h3 {
+  font-size: 17px;
+  margin: 28px 0 10px;
+}
+
+.article-body p { margin: 0 0 16px; }
+.article-body ul { padding-left: 1.3em; margin: 0 0 16px; }
+.article-body li { margin-bottom: 6px; }
+.article-body hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 20px;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+}
+.article-body th, .article-body td {
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  text-align: left;
+}
+.article-body th { background: var(--bg); color: var(--navy); }
+
+.article-body blockquote {
+  margin: 0 0 20px;
+  padding: 10px 16px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg);
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.article-body blockquote p { margin: 0 0 6px; }
+.article-body blockquote p:last-child { margin-bottom: 0; }
+
+.article-disclaimer {
+  margin-top: 40px;
+  padding: 16px 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--accent-ink); }
+
+/* ============ フッター・法的ページ ============ */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px 40px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+.site-footer a { color: var(--muted); margin: 0 8px; }
+
+.legal-main h1 { font-size: 22px; margin-bottom: 4px; }
+.legal-main .updated { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+.legal-main h2 { font-size: 16px; margin-top: 26px; }
+.legal-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.legal-table th, .legal-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+.legal-table th { width: 30%; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+form.contact-form { display: flex; flex-direction: column; gap: 12px; max-width: 480px; }
+form.contact-form input, form.contact-form textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  background: var(--panel-bg);
+  color: var(--text);
+}
+form.contact-form button {
+  align-self: flex-start;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}

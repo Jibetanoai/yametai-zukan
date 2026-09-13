@@ -1,0 +1,13 @@
+{
+  "name": "yametai-zukan",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node content_team/generate_article.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.266",
+    "dotenv": "^17.4.2"
+  }
+}
