@@ -314,6 +314,51 @@
         "place": "field",
         "stability": "low"
       }
+    },
+    {
+      "slug": "bengoshi-yameru-riyuu",
+      "title": "弁護士を辞めたいと感じる理由とは?離職・転身の実態を公的統計から整理",
+      "meta": "弁護士が「辞めたい」と感じる背景を、日弁連の弁護士白書・経済的基盤実態調査やJILAの統計から整理。労働時間や収入のばらつき、登録取消しの実態、事務所内で変えられること、転職を検討する際の比較軸までを解説します。",
+      "keywords": "弁護士 辞めたい 理由, 弁護士 離職率, 弁護士 廃業 統計, 弁護士 転職",
+      "createdAt": "2026-09-14T03:38:24.658Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "desk",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "zeirishi-yameru-riyuu",
+      "title": "税理士はなぜ「辞める人が多い」と言われるのか?離職理由7つと会計事務所の実態を統計から整理",
+      "meta": "税理士・会計事務所職員の離職について、厚生労働省の雇用動向調査・賃金構造基本統計調査、日本税理士会連合会の第7回税理士実態調査などをもとに整理。繁忙期、試験との両立、処遇など7つの要因と、辞める前に確認したい判断材料をまとめました。",
+      "keywords": "税理士 辞めたい, 会計事務所 離職率, 税理士 離職理由, 税理士 転職",
+      "createdAt": "2026-09-14T03:49:51.813Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "henshusha-yameru-riyuu",
+      "title": "編集者はなぜ「辞める人が多い」と言われるのか?公的統計と業界データで実態を整理",
+      "meta": "編集者の離職はなぜ語られやすいのか。厚生労働省の雇用動向調査・賃金構造基本統計調査や出版市場データをもとに、離職率の実像と「辞めたい」と感じやすい6つの論点、続けるか転職するかの判断材料を整理します。",
+      "keywords": "編集者 辞めたい, 編集者 離職率, 編集者 転職, 出版業界 離職率",
+      "createdAt": "2026-09-14T04:00:55.434Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium"
+      }
     }
   ]
 }
