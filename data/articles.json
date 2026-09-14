@@ -89,6 +89,141 @@
         "place": "field",
         "stability": "medium"
       }
+    },
+    {
+      "slug": "houjin-eigyou-yameru-riyuu",
+      "title": "法人営業は本当に「辞める人が多い」のか｜語られる離職理由を統計から検証する",
+      "meta": "法人営業(BtoB営業)は辞める人が多いと語られがちですが、実態はどうなのか。厚生労働省の雇用動向調査など公的統計と民間調査を確認しつつ、よく挙がる離職理由8つ、続ける/動くの切り分け方、キャリアの選択肢を整理します。",
+      "keywords": "法人営業 辞めたい, 法人営業 離職率, BtoB営業 きつい, 法人営業 転職",
+      "createdAt": "2026-09-13T16:24:22.212Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "kojin-eigyou-yametai-riyuu",
+      "title": "個人営業を「辞めたい」と感じる人がいるのはなぜか?離職理由と実態を統計から整理",
+      "meta": "個人向け営業(BtoC営業)で「辞めたい」と感じる人がいるのはなぜか。厚生労働省の雇用動向調査・新規学卒就職者の離職状況をもとに、統計で言えること/言えないことを切り分けながら、離職理由の傾向と判断の整理軸を編集部が中立的にまとめました。",
+      "keywords": "個人営業 辞めたい, 個人営業 離職率, 個人営業 きつい, 営業職 離職理由",
+      "createdAt": "2026-09-13T16:32:17.046Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "fudosan-eigyo-yameru-riyuu",
+      "title": "不動産営業はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "不動産営業の離職率は本当に高いのか。厚生労働省の雇用動向調査や新規学卒者の離職状況をもとに、統計の読み方と辞めたい理由6つを整理。業態ごとの違いや、続けるか転職するかの判断材料もまとめます。",
+      "keywords": "不動産営業 辞めたい理由, 不動産業界 離職率, 不動産営業 きつい 実態, 不動産営業 転職",
+      "createdAt": "2026-09-13T16:40:46.672Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "hoken-eigyou-yameru-riyuu",
+      "title": "保険営業はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理",
+      "meta": "保険営業の離職率は本当に高いのか。厚労省の雇用動向調査や生命保険協会の統計、報道データをもとに、辞める人が多いと言われる背景と主な離職理由、続ける・動くを判断する視点を客観的に整理します。",
+      "keywords": "保険営業 辞めたい理由, 保険営業 離職率, 生保レディ 辞めたい, 保険営業 転職",
+      "createdAt": "2026-09-13T23:22:40.980Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "low"
+      }
+    },
+    {
+      "slug": "mr-yameru-riyuu",
+      "title": "MR(医薬品営業)を辞めたい人が多いのはなぜ?離職理由と業界の実態を統計から整理",
+      "meta": "MRの離職が語られる背景を、MR白書や厚生労働省の雇用動向調査などのデータから整理。転勤・数字・将来不安といった理由の構造と、続けるか転職を考えるかの判断材料をまとめました。",
+      "keywords": "MR 辞めたい理由, MR 離職率, MR 転職, 医薬品営業 離職",
+      "createdAt": "2026-09-13T23:32:03.514Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "byoin-yakuzaishi-rishoku-riyuu-toukei",
+      "title": "病院薬剤師は本当に「辞める人が多い」のか?離職率データと語られる理由を統計から整理",
+      "meta": "病院薬剤師の離職率は本当に高いのか。厚労省の雇用動向調査や薬剤師確保に関する調査をもとに、データで言えること・言えないことを切り分け、現場で語られる離職理由を整理。続けるか転職かを判断する材料も解説します。",
+      "keywords": "病院薬剤師 辞めたい理由, 病院薬剤師 離職率, 薬剤師 退職理由, 病院薬剤師 転職",
+      "createdAt": "2026-09-13T23:40:52.578Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "yakkyoku-yakuzaishi-yametai-riyuu",
+      "title": "薬局薬剤師(調剤薬局薬剤師)が「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理",
+      "meta": "調剤薬局の薬剤師が「辞めたい」と感じる背景を、厚生労働省の雇用動向調査・賃金構造基本統計調査・需給推計などの公的データから整理。年収カーブ、少人数職場、対人業務への転換、業界再編の影響と、続けるか転職かの判断材料を解説します。",
+      "keywords": "薬剤師 辞めたい理由, 調剤薬局 薬剤師 離職率, 薬剤師 転職理由, 薬局薬剤師 実態",
+      "createdAt": "2026-09-13T23:48:45.852Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "drugstore-yakuzaishi-yameru-riyuu",
+      "title": "ドラッグストア薬剤師はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "ドラッグストア薬剤師の離職理由を、厚生労働省の雇用動向調査や薬剤師を対象とした民間調査から整理。給与・勤務時間・業務範囲など「辞めたい」につながりやすい構造と、続ける人の視点、判断材料をまとめました。",
+      "keywords": "ドラッグストア薬剤師 辞めたい, ドラッグストア薬剤師 離職理由, 薬剤師 離職率, ドラッグストア薬剤師 きつい",
+      "createdAt": "2026-09-13T23:58:18.306Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "haken-yakuzaishi-yameru-riyuu",
+      "title": "派遣薬剤師は「辞める人が多い」と言われるのはなぜか｜離職理由と実態を統計から整理",
+      "meta": "派遣薬剤師の離職が多く見えるのはなぜか。厚生労働省の雇用動向調査・派遣労働者実態調査や薬剤師需給推計をもとに、有期契約や3年ルールといった制度上の区切り、収入・キャリアの課題を整理し、続けるか転職かの判断材料をまとめました。",
+      "keywords": "派遣薬剤師 辞めたい, 派遣薬剤師 離職理由, 派遣薬剤師 実態, 薬剤師 離職率",
+      "createdAt": "2026-09-14T00:07:25.416Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "low"
+      }
     }
   ]
 }

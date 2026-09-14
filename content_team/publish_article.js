@@ -80,9 +80,18 @@ function writeArticleIndex(articles) {
   fs.writeFileSync(INDEX_DATA_FILE, JSON.stringify({ articles }, null, 2), "utf8");
 }
 
+// 生成環境(ローカルはJST、クラウド実行時はUTCの可能性あり)に関わらず、必ず
+// 日本時間の日付で表示するための変換。ローカルタイムゾーン依存のgetDate()等は使わない。
 function formatDateJa(iso) {
   const d = new Date(iso);
-  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  const parts = new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).formatToParts(d);
+  const get = (type) => parts.find((p) => p.type === type).value;
+  return `${get("year")}年${get("month")}月${get("day")}日`;
 }
 
 function relatedArticlesHtml(current, allArticles) {
