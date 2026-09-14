@@ -389,6 +389,21 @@
         "place": "field",
         "stability": "high"
       }
+    },
+    {
+      "slug": "kensetsu-sagyouin-rishoku-riyuu-data",
+      "title": "建設作業員の離職率は本当に高い?データで見る離職理由と実態の整理",
+      "meta": "建設作業員は辞める人が多いのか。厚生労働省の雇用動向調査や国土交通省の資料をもとに、離職率の実態・労働時間・収入形態・安全面などを年次を明示して整理し、続けるか転職かの判断材料をまとめました。",
+      "keywords": "建設作業員 辞めたい理由, 建設業 離職率, 建設作業員 転職, 建設業 若者離れ",
+      "createdAt": "2026-09-14T08:02:42.784Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
     }
   ]
 }
