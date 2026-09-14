@@ -113,14 +113,16 @@ function relatedArticlesHtml(current, allArticles) {
 function buildVoicesSectionHtml(article) {
   if (!site.supabaseUrl || !site.supabasePublishableKey) return "";
   return `
-    <div class="voices-box" id="voices-box" data-slug="${escapeHtml(article.slug)}">
-      <h2 class="voices-title">💬 現場のリアルな声</h2>
+    <details class="voices-box" id="voices-box" data-slug="${escapeHtml(article.slug)}">
+      <summary class="voices-title">💬 実際に働いている人の声</summary>
+      <div class="voices-body">
       <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、すぐに公開されます。</p>
       <textarea id="voice-input" class="voice-textarea" placeholder="例: 人手不足で有給が取りづらい。でもやりがいはある、など(5〜1000字)" maxlength="1000"></textarea>
       <button type="button" id="voice-submit" class="voice-submit">投稿する</button>
       <p id="voice-status" class="voice-status" hidden></p>
       <div id="voices-list" class="voices-list"><p class="voices-loading">声を読み込み中...</p></div>
-    </div>`;
+      </div>
+    </details>`;
 }
 
 function buildVoicesScript() {
@@ -248,6 +250,7 @@ ${gaSnippet()}</head>
 
 <main>
   <a href="../index.html" class="back-link">← 図鑑一覧に戻る</a>
+  ${buildVoicesSectionHtml(article)}
   <article>
     <header class="article-header">
       <div class="article-date">${formatDateJa(publishedIso)}</div>
@@ -261,7 +264,6 @@ ${gaSnippet()}</head>
     </div>
     ${relatedArticlesHtml(article, allArticles)}
   </article>
-  ${buildVoicesSectionHtml(article)}
 </main>
 
 <footer class="site-footer">
