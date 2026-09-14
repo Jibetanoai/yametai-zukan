@@ -607,6 +607,25 @@
         "schedule": "irregular",
         "license": "required"
       }
+    },
+    {
+      "slug": "clinic-kangoshi-yametai-riyuu",
+      "title": "クリニック看護師が「辞めたい」と感じる理由は?統計で分かること・分からないこと",
+      "meta": "クリニック看護師の「辞めたい」の背景を、日本看護協会・厚生労働省の統計で確かめられる範囲と、統計では確かめられない職場構造の話に分けて整理。続けるか動くかの判断材料までまとめます。",
+      "keywords": "クリニック看護師 辞めたい, クリニック看護師 離職理由, 看護師 離職率, クリニック看護師 転職",
+      "createdAt": "2026-09-14T15:35:35.600Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "required"
+      }
     }
   ]
 }
