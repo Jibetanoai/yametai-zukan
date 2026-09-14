@@ -588,6 +588,25 @@
         "schedule": "irregular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "byoin-kangoshi-yameru-riyuu",
+      "title": "病院看護師はなぜ辞める人が多いのか?離職率11.0%の実態と主な離職理由を統計から整理",
+      "meta": "病院で働く正規雇用看護職員の離職率は2024年度で11.0%(日本看護協会調査)。統計ごとに定義が異なるため単純比較はできませんが、夜勤負担やメンタル不調など調査で繰り返し挙がる論点を整理し、続けるか動くかの判断材料をまとめます。",
+      "keywords": "看護師 辞めたい 理由, 看護師 離職率, 病院看護師 退職理由, 看護師 転職 判断",
+      "createdAt": "2026-09-14T15:24:53.396Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
     }
   ]
 }
