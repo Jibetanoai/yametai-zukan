@@ -359,6 +359,36 @@
         "place": "desk",
         "stability": "medium"
       }
+    },
+    {
+      "slug": "jinji-yametai-riyuu",
+      "title": "人事が「辞めたい」と感じやすいと言われる背景を、統計と実務から整理する",
+      "meta": "人事の仕事を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査・労働安全衛生調査などの公的統計と実務解説をもとに、人事職に生じやすい負荷を整理。続けるか転職かを切り分けるための判断材料も紹介します。",
+      "keywords": "人事 辞めたい,人事 離職理由,人事 転職,人事 きつい",
+      "createdAt": "2026-09-14T04:17:12.127Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "keisatsukan-yameru-riyuu",
+      "title": "警察官はなぜ辞める人が多いと言われるのか?離職の実態と理由を統計から整理",
+      "meta": "警察官の離職は本当に多いのか。総務省・厚生労働省の統計や報道をもとに、退職が若手に偏る傾向、勤務形態・組織文化・私生活の制約といった離職理由を整理し、続けるか転職かを考える判断材料をまとめました。",
+      "keywords": "警察官 辞めたい 理由, 警察官 離職率, 警察官 退職 実態, 警察官 転職",
+      "createdAt": "2026-09-14T04:28:33.108Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high"
+      }
     }
   ]
 }
