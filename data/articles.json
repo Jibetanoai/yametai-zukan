@@ -645,6 +645,25 @@
         "schedule": "irregular",
         "license": "required"
       }
+    },
+    {
+      "slug": "houmon-kangoshi-rishoku-riyuu",
+      "title": "訪問看護師の離職率は本当に高い?辞める理由と実態を統計から整理",
+      "meta": "訪問看護師の離職率は本当に高いのか、辞める理由として何が語られているのかを、厚労省の雇用動向調査や日本看護協会の実態調査などの統計をもとに整理。オンコールや一人訪問の責任など8つのテーマと、続けるか転職かの判断材料もまとめました。",
+      "keywords": "訪問看護師 辞める理由, 訪問看護 離職率, 訪問看護師 辞めたい, 訪問看護 きつい",
+      "createdAt": "2026-09-14T15:58:24.179Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
     }
   ]
 }
