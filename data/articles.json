@@ -626,6 +626,25 @@
         "schedule": "regular",
         "license": "required"
       }
+    },
+    {
+      "slug": "biyou-kangoshi-yameru-riyuu",
+      "title": "美容看護師はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理",
+      "meta": "美容看護師の離職理由を、公的統計と業界の発信を切り分けて整理しました。「離職率が高い」と言われる根拠の確かさ、売上目標・教育体制・キャリア不安といった辞めたい理由、続けるか転職かを判断する材料までまとめます。",
+      "keywords": "美容看護師 辞めたい, 美容看護師 離職率, 美容クリニック 看護師 退職理由, 美容看護師 転職",
+      "createdAt": "2026-09-14T15:47:47.600Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
+      }
     }
   ]
 }
