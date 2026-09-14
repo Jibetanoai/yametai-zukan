@@ -434,6 +434,21 @@
         "place": "desk",
         "stability": "high"
       }
+    },
+    {
+      "slug": "soumu-yametai-riyuu",
+      "title": "総務を「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理",
+      "meta": "総務を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査やバックオフィスの実態調査をもとに、総務の離職理由と背景、そして評価されていると感じる層のデータも含めて整理し、続けるか転職するかの判断材料をまとめました。",
+      "keywords": "総務 辞めたい, 総務 離職理由, 総務 転職, 総務 仕事 つらい",
+      "createdAt": "2026-09-14T14:12:57.381Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium"
+      }
     }
   ]
 }
