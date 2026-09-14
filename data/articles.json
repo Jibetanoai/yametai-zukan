@@ -664,6 +664,25 @@
         "schedule": "irregular",
         "license": "required"
       }
+    },
+    {
+      "slug": "houmon-yakuzaishi-yameru-riyuu",
+      "title": "訪問薬剤師が「辞めたい」と感じる理由7つ｜離職率・勤続年数の統計から実態を整理",
+      "meta": "訪問薬剤師(在宅対応薬剤師)の離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や業界アンケートをもとに整理。オンコールや記録業務などの負担と、「続ける・変える」の判断材料をまとめました。",
+      "keywords": "訪問薬剤師 辞めたい, 在宅 薬剤師 離職率, 薬剤師 離職理由, 在宅医療 薬剤師 転職",
+      "createdAt": "2026-09-14T23:28:28.804Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "high",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
     }
   ]
 }
