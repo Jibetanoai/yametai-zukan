@@ -161,16 +161,20 @@ ${roleListMarkdown([redTeamDept])}
 // 記事(職業)ごとにこの語彙からタグを選んでもらい、診断機能の絞り込みに使う。
 const TAG_VOCAB = `
 TAGS(診断機能用の属性タグ)の選び方:
-以下の5つの軸それぞれについて、この職業に最もよく当てはまる値を1つずつ選び、
-"軸:値" の形式でカンマ区切りにすること(必ず5つとも選ぶ、値は下記の候補から一字一句そのまま使う)。
+以下の9つの軸それぞれについて、この職業に最もよく当てはまる値を1つずつ選び、
+"軸:値" の形式でカンマ区切りにすること(必ず9つとも選ぶ、値は下記の候補から一字一句そのまま使う)。
 
 - physical(体力的な負担): high / medium / low
 - people(対人・感情労働の負担): high / medium / low
 - style(仕事の進め方): team(チームワーク中心) / solo(individual作業中心)
 - place(働く環境): desk(デスクワーク中心) / field(現場・外回り中心)
 - stability(雇用・収入の安定性): high / medium / low
+- income(収入水準): high / medium / low
+- pressure(ノルマ・成果プレッシャー): high / medium / low
+- schedule(勤務時間の規則性): regular(規則的) / irregular(不規則・シフト制)
+- license(資格・専門性の必要性): required(必須) / notRequired(不要)
 
-出力例: TAGS: physical:medium, people:high, style:team, place:field, stability:medium`;
+出力例: TAGS: physical:medium, people:high, style:team, place:field, stability:medium, income:medium, pressure:high, schedule:irregular, license:notRequired`;
 
 function buildFinalEditPrompt(topic, draft, redTeamNotes) {
   const systemPrompt = `${PERSONA}
@@ -187,13 +191,13 @@ TITLE: (最終タイトル)
 META: (最終メタディスクリプション)
 SLUG: (URL用のスラッグ。英数字とハイフンのみ、日本語不可、例: hoikushi-yameru-riyuu)
 NOTE: (この記事が狙ったキーワード・読者層の内部管理メモを一言で)
-TAGS: (上記の固定語彙から5軸すべて選んでカンマ区切りで)
+TAGS: (上記の固定語彙から9軸すべて選んでカンマ区切りで)
 <<<BODY>>>
 (レッドチームの指摘を反映し、誤字脱字も直した最終版の記事本文。Markdown形式)
 
 重要:
 - レッドチームが指摘した問題は必ず解消すること。
-- TAGSは必ず指定した語彙(high/medium/low、team/solo、desk/field)からのみ選ぶこと。
+- TAGSは必ず指定した語彙(high/medium/low、team/solo、desk/field、regular/irregular、required/notRequired)からのみ選ぶこと。
 - 指定した出力形式以外の前置き・後書きは書かないこと。`;
 
   const userPrompt = `記事テーマ: ${topic}\n\n【下書き】\n${draft}\n\n---\n\n【レッドチームの指摘】\n${redTeamNotes}\n\nこれを踏まえた最終版を作成してください。`;

@@ -185,14 +185,46 @@ main {
   background: var(--panel-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
 .quiz-title {
-  margin: 0 0 6px;
-  font-size: 20px;
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.quiz-title::-webkit-details-marker {
+  display: none;
+}
+
+.quiz-title::after {
+  content: "▾";
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.quiz-box[open] .quiz-title::after {
+  transform: rotate(180deg);
+}
+
+.quiz-title:hover {
+  background: var(--bg);
+}
+
+.quiz-body {
+  padding: 0 24px 24px;
 }
 
 .quiz-desc {

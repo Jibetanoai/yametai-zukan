@@ -12,7 +12,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -27,7 +31,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -42,7 +50,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -57,7 +69,11 @@
         "people": "medium",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -72,7 +88,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "required"
       }
     },
     {
@@ -87,7 +107,11 @@
         "people": "medium",
         "style": "solo",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -102,7 +126,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -117,7 +145,11 @@
         "people": "high",
         "style": "solo",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -132,7 +164,11 @@
         "people": "high",
         "style": "solo",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -147,7 +183,11 @@
         "people": "high",
         "style": "solo",
         "place": "field",
-        "stability": "low"
+        "stability": "low",
+        "income": "low",
+        "pressure": "high",
+        "schedule": "regular",
+        "license": "required"
       }
     },
     {
@@ -162,7 +202,11 @@
         "people": "high",
         "style": "solo",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -177,7 +221,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -192,7 +240,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "required"
       }
     },
     {
@@ -207,7 +259,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -222,7 +278,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "low"
+        "stability": "low",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -237,7 +297,11 @@
         "people": "medium",
         "style": "team",
         "place": "desk",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -252,7 +316,11 @@
         "people": "medium",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -267,7 +335,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -282,7 +354,11 @@
         "people": "medium",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -297,7 +373,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -312,7 +392,11 @@
         "people": "medium",
         "style": "team",
         "place": "field",
-        "stability": "low"
+        "stability": "low",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -327,7 +411,11 @@
         "people": "high",
         "style": "solo",
         "place": "desk",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -342,7 +430,11 @@
         "people": "high",
         "style": "solo",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "high",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
       }
     },
     {
@@ -357,7 +449,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -372,7 +468,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -387,7 +487,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     },
     {
@@ -402,7 +506,11 @@
         "people": "medium",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -417,7 +525,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "required"
       }
     },
     {
@@ -432,7 +544,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "high"
+        "stability": "high",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -447,7 +563,11 @@
         "people": "high",
         "style": "team",
         "place": "desk",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
       }
     },
     {
@@ -462,7 +582,11 @@
         "people": "high",
         "style": "team",
         "place": "field",
-        "stability": "medium"
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
       }
     }
   ]

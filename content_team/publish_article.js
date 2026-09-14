@@ -48,6 +48,10 @@ const TAG_AXES = [
   { key: "style", label: "仕事の進め方", options: [{ v: "team", l: "チームワーク中心" }, { v: "solo", l: "一人作業中心" }] },
   { key: "place", label: "働く環境", options: [{ v: "desk", l: "デスクワーク中心" }, { v: "field", l: "現場・外回り中心" }] },
   { key: "stability", label: "雇用・収入の安定性", options: [{ v: "high", l: "高い" }, { v: "medium", l: "普通" }, { v: "low", l: "低い" }] },
+  { key: "income", label: "収入水準", options: [{ v: "high", l: "高め" }, { v: "medium", l: "普通" }, { v: "low", l: "低め" }] },
+  { key: "pressure", label: "ノルマ・成果プレッシャー", options: [{ v: "high", l: "大きい" }, { v: "medium", l: "普通" }, { v: "low", l: "小さい" }] },
+  { key: "schedule", label: "勤務時間の規則性", options: [{ v: "regular", l: "規則的" }, { v: "irregular", l: "不規則・シフト制" }] },
+  { key: "license", label: "資格・専門性の必要性", options: [{ v: "required", l: "必須" }, { v: "notRequired", l: "不要" }] },
 ];
 
 function gaSnippet() {
@@ -283,8 +287,9 @@ function articleCardHtml(a) {
 
 function buildQuizHtml() {
   return `
-  <div class="quiz-box">
-    <h2 class="quiz-title">🔍 あなたにおすすめの職業は?</h2>
+  <details class="quiz-box">
+    <summary class="quiz-title">🔍 あなたにおすすめの職業は?</summary>
+    <div class="quiz-body">
     <p class="quiz-desc">当てはまる条件を選んで診断してみてください(こだわらない軸は空欄のままでOK)。</p>
     ${TAG_AXES.map((axis) => `
     <div class="quiz-axis">
@@ -295,7 +300,8 @@ function buildQuizHtml() {
     </div>`).join("")}
     <button type="button" id="quiz-submit" class="quiz-submit">診断する</button>
     <div id="quiz-result" class="quiz-result" hidden></div>
-  </div>`;
+    </div>
+  </details>`;
 }
 
 function buildQuizScript(articles) {
