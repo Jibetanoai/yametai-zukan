@@ -449,6 +449,21 @@
         "place": "desk",
         "stability": "medium"
       }
+    },
+    {
+      "slug": "ses-kyakusaki-jouchuu-yameru-riyuu",
+      "title": "SES・客先常駐エンジニアは本当に「辞める人が多い」のか?——統計と業界構造から整理",
+      "meta": "SES・客先常駐エンジニアの離職実態を、厚生労働省の雇用動向調査やdodaの転職理由ランキング、IPA「DX動向2026」などをもとに検証。離職につながりやすい5つの構造的要因と、続けるか転職するかを切り分ける視点を整理します。",
+      "keywords": "SES 辞めたい, 客先常駐 辞めたい理由, SESエンジニア 離職率, 客先常駐 転職",
+      "createdAt": "2026-09-14T14:22:07.129Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
     }
   ]
 }
