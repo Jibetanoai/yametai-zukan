@@ -404,6 +404,21 @@
         "place": "field",
         "stability": "medium"
       }
+    },
+    {
+      "slug": "youchien-kyouyu-yameru-riyuu",
+      "title": "幼稚園教諭が「辞めたい」と感じる理由とは?離職の実態と退職理由を公的統計から整理",
+      "meta": "幼稚園教諭の離職の実態と退職理由を、文部科学省「学校教員統計調査」や東京都の保育者実態調査など公的データから整理。給与・業務量・人間関係・ライフイベントの位置づけと、続けるか環境を変えるかを考える判断材料をまとめました。",
+      "keywords": "幼稚園教諭 辞めたい理由, 幼稚園教諭 離職率, 幼稚園教諭 退職理由, 幼稚園教諭 転職",
+      "createdAt": "2026-09-14T10:18:19.416Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium"
+      }
     }
   ]
 }
