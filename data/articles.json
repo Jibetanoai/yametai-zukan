@@ -224,6 +224,96 @@
         "place": "field",
         "stability": "low"
       }
+    },
+    {
+      "slug": "frontend-engineer-yameru-riyuu",
+      "title": "フロントエンドエンジニアはなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "フロントエンドエンジニアの離職理由を、厚生労働省「令和6年雇用動向調査」など公的統計と各種調査から整理。情報通信業の離職率12.4%は全産業平均14.2%を下回る一方、技術変化や評価のされにくさなど職種特有の悩みも。続ける/転職を判断する材料までまとめました。",
+      "keywords": "フロントエンドエンジニア 辞めたい, フロントエンドエンジニア 離職率, フロントエンドエンジニア つらい, フロントエンドエンジニア 転職",
+      "createdAt": "2026-09-14T00:22:57.574Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "low",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "infra-engineer-yameru-riyuu",
+      "title": "インフラエンジニアはなぜ「辞めたい」と語られるのか?離職理由と実態を統計から整理",
+      "meta": "インフラエンジニアの離職理由を、厚生労働省の雇用動向調査など公的統計を中心に整理。夜勤・障害対応・評価されにくさなど7つの背景と、辞める前に確かめたい判断軸、転職先の選択肢を、データの時点や出典の限界も明示して解説します。",
+      "keywords": "インフラエンジニア 辞めたい, インフラエンジニア 離職率, インフラエンジニア きつい 理由, インフラエンジニア 転職",
+      "createdAt": "2026-09-14T00:32:12.273Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "medium",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "shougakkou-kyoushi-yameru-riyuu",
+      "title": "小学校教師はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "小学校教師の休職・離職の実態を、文部科学省や厚生労働省の公的統計から整理。長時間労働・保護者対応・処遇など「辞めたい」と感じる理由を5つに分類し、続けるか転職かを考えるための判断材料をまとめました。",
+      "keywords": "小学校教師 辞めたい理由, 小学校教員 離職率, 教員 辞める理由, 教師 転職",
+      "createdAt": "2026-09-14T00:41:57.402Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "keiri-yameru-riyuu-toukei",
+      "title": "経理を辞めたい人が多いのはなぜ？離職理由と実態を統計・調査から整理",
+      "meta": "経理職の離職理由を、厚生労働省の雇用動向調査や民間の経理職アンケートをもとに整理。ミスが許されない緊張感、繁忙期の偏り、一人経理、キャリアの見通しなど背景を解説し、続けるか転職かの判断材料を示します。",
+      "keywords": "経理 辞めたい 理由, 経理 離職率, 経理 辞める人が多い, 経理 転職",
+      "createdAt": "2026-09-14T03:12:05.337Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "high"
+      }
+    },
+    {
+      "slug": "web-designer-yameru-riyuu",
+      "title": "Webデザイナーはなぜ辞める人が多いと言われるのか?離職率と離職理由を統計から整理",
+      "meta": "Webデザイナーの離職率は本当に高いのか、厚生労働省の雇用動向調査や民間調査をもとに整理。収入・労働時間・評価・AIなど辞めたい理由の傾向と、根拠の強さの違い、続けるか転職するかを判断する視点をまとめました。",
+      "keywords": "Webデザイナー 辞めたい, Webデザイナー 離職率, Webデザイナー 辞める理由, Webデザイナー 転職",
+      "createdAt": "2026-09-14T03:21:16.990Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium"
+      }
+    },
+    {
+      "slug": "kikanko-yameru-riyuu",
+      "title": "期間工はなぜ「辞める人が多い」と言われるのか｜離職理由と実態を統計から整理",
+      "meta": "期間工・工場作業員の離職率は本当に高いのか。厚生労働省の雇用動向調査など公的データをもとに、契約満了・交替勤務・身体的負担といった離職理由を分類し、続けるか動くかの判断材料を整理します。",
+      "keywords": "期間工 辞める理由, 期間工 離職率, 工場作業員 辞めたい, 期間工 実態",
+      "createdAt": "2026-09-14T03:29:17.364Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "team",
+        "place": "field",
+        "stability": "low"
+      }
     }
   ]
 }
