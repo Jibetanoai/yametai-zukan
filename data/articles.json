@@ -740,6 +740,63 @@
         "schedule": "irregular",
         "license": "required"
       }
+    },
+    {
+      "slug": "ippan-jimu-yameru-riyuu",
+      "title": "一般事務はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "一般事務を辞めたいと感じる理由を、厚生労働省の雇用動向調査や民間アンケートなどのデータから整理。単調さ・評価のされにくさ・AIへの不安の実態と、データで言えること/言えないことを切り分けつつ、続けるか動くかの判断材料をまとめました。",
+      "keywords": "一般事務 辞めたい理由, 事務職 離職率, 一般事務 転職, 事務職 将来性",
+      "createdAt": "2026-09-15T00:38:06.689Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "low",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "takuhai-driver-yameru-riyuu",
+      "title": "宅配ドライバーは本当に「辞める人が多い」のか?統計で見る離職率と離職理由の実態",
+      "meta": "宅配ドライバーの離職率は本当に高いのか。厚労省の雇用動向調査や国交省の公表データをもとに、統計が示す実態と、辞める理由として語られる内容の根拠を整理。続けるか転職かを判断するための視点も中立的にまとめます。",
+      "keywords": "宅配ドライバー 辞めたい理由, 宅配ドライバー 離職率, 配送ドライバー 転職, 物流 2024年問題",
+      "createdAt": "2026-09-15T00:50:08.748Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "solo",
+        "place": "field",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "keiei-consultant-yameru-riyuu",
+      "title": "経営コンサルタントは「辞める人が多い」と言われるのはなぜか?離職理由と実態を統計から検証",
+      "meta": "経営コンサルタントの離職率は本当に高いのか。厚生労働省「雇用動向調査」や転職理由調査をもとに、語られる離職理由を7つに整理し、続けるか動くかを判断するための材料をまとめました。",
+      "keywords": "経営コンサルタント 辞めたい, コンサル 離職率, コンサルタント 離職理由, コンサル 辞める理由",
+      "createdAt": "2026-09-15T01:53:34.418Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
     }
   ]
 }
