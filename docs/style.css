@@ -154,6 +154,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
 
@@ -608,6 +609,33 @@ main {
   text-decoration: none;
 }
 .back-link:hover { color: var(--accent-ink); }
+
+.breadcrumb {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: var(--accent-ink); }
+
+.category-page-header {
+  margin-bottom: 24px;
+}
+.category-page-header h1 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  color: var(--navy);
+  margin: 0 0 8px;
+}
+.category-page-header p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
 
 /* ============ フッター・法的ページ ============ */
 .site-footer {

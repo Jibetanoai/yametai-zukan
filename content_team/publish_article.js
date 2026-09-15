@@ -9,6 +9,7 @@ const site = require("./site_config");
 
 const DOCS_DIR = path.join(__dirname, "..", "docs");
 const ARTICLES_DIR = path.join(DOCS_DIR, "articles");
+const CATEGORY_DIR = path.join(DOCS_DIR, "category");
 const INDEX_DATA_FILE = path.join(__dirname, "..", "data", "articles.json");
 
 // 職業の業種カテゴリ。新規記事はタイトル/トピックのキーワードから自動推定するが、
@@ -144,14 +145,25 @@ function buildSummaryBoxHtml(article) {
     </details>`;
 }
 
+function categoryLabel(key) {
+  const found = CATEGORIES.find((c) => c.key === key);
+  return found ? found.label : CATEGORIES[0].label;
+}
+
+// SEO・回遊性のため、同カテゴリ(=職種の近さ)の記事を優先してリンクする。
+// 同カテゴリだけで3件に満たない場合は他カテゴリの記事で埋める。
 function relatedArticlesHtml(current, allArticles) {
-  const others = allArticles.filter((a) => a.slug !== current.slug).slice(0, 3);
-  if (others.length === 0) return "";
+  const currentCategory = current.category || inferCategory(current);
+  const rest = allArticles.filter((a) => a.slug !== current.slug);
+  const sameCategory = rest.filter((a) => (a.category || inferCategory(a)) === currentCategory);
+  const others = rest.filter((a) => (a.category || inferCategory(a)) !== currentCategory);
+  const picked = [...sameCategory, ...others].slice(0, 3);
+  if (picked.length === 0) return "";
   return `
     <div class="article-disclaimer" style="background:transparent;">
       <strong>関連記事</strong>
       <ul>
-        ${others.map((a) => `<li><a href="${escapeHtml(a.slug)}.html">${escapeHtml(a.title)}</a></li>`).join("")}
+        ${picked.map((a) => `<li><a href="${escapeHtml(a.slug)}.html">${escapeHtml(a.title)}</a></li>`).join("")}
       </ul>
     </div>`;
 }
@@ -249,6 +261,8 @@ function buildArticleHtml(article, allArticles) {
   const url = `${site.baseUrl}/articles/${article.slug}.html`;
   const bodyHtml = markdownToHtml(article.bodyMarkdown);
   const publishedIso = article.createdAt;
+  const categoryKey = article.category || inferCategory(article);
+  const categoryUrl = `${site.baseUrl}/category/${categoryKey}.html`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -262,6 +276,16 @@ function buildArticleHtml(article, allArticles) {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: site.siteName, item: `${site.baseUrl}/` },
+      { "@type": "ListItem", position: 2, name: categoryLabel(categoryKey), item: categoryUrl },
+      { "@type": "ListItem", position: 3, name: article.title, item: url },
+    ],
+  };
+
   return `<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -269,7 +293,7 @@ function buildArticleHtml(article, allArticles) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(article.title)} | ${site.siteName}</title>
 <meta name="description" content="${escapeHtml(article.meta)}">
-<link rel="canonical" href="${url}">
+${article.keywords ? `<meta name="keywords" content="${escapeHtml(article.keywords)}">\n` : ""}<link rel="canonical" href="${url}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="${escapeHtml(article.title)}">
 <meta property="og:description" content="${escapeHtml(article.meta)}">
@@ -284,6 +308,7 @@ ${site.twitterHandle ? `<meta name="twitter:site" content="${escapeHtml(site.twi
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
 ${gaSnippet()}</head>
 <body>
 
@@ -295,7 +320,10 @@ ${gaSnippet()}</head>
 <div class="disclosure-banner">本サイトはアフィリエイト広告を利用しています</div>
 
 <main>
-  <a href="../index.html" class="back-link">← 図鑑一覧に戻る</a>
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="../index.html">図鑑一覧</a> &gt;
+    <a href="../category/${categoryKey}.html">${escapeHtml(categoryLabel(categoryKey))}</a>
+  </nav>
   ${buildSummaryBoxHtml(article)}
   ${buildVoicesSectionHtml(article)}
   <article>
@@ -324,9 +352,9 @@ ${buildVoicesScript()}
 `;
 }
 
-function articleCardHtml(a) {
+function articleCardHtml(a, basePath = "") {
   return `
-      <a class="article-card" href="articles/${escapeHtml(a.slug)}.html">
+      <a class="article-card" href="${basePath}articles/${escapeHtml(a.slug)}.html">
         <div class="article-card-date">${formatDateJa(a.createdAt)}</div>
         <h2>${escapeHtml(a.title)}</h2>
         <p>${escapeHtml(a.meta)}</p>
@@ -408,7 +436,7 @@ function buildIndexHtml(articles) {
     ${CATEGORIES.map((c) => {
       const count = sorted.filter((a) => (a.category || "eigyo_hanbai") === c.key).length;
       if (count === 0) return "";
-      return `<button type="button" class="category-tab" role="tab" data-category="${c.key}">${escapeHtml(c.label)}<span class="category-tab-count">${count}</span></button>`;
+      return `<a href="category/${c.key}.html" class="category-tab" role="tab" data-category="${c.key}">${escapeHtml(c.label)}<span class="category-tab-count">${count}</span></a>`;
     }).join("")}
   </div>`;
 
@@ -422,7 +450,8 @@ function buildIndexHtml(articles) {
   var tabs = document.querySelectorAll(".category-tab");
   var cards = document.querySelectorAll(".article-card-wrap");
   tabs.forEach(function(tab) {
-    tab.addEventListener("click", function() {
+    tab.addEventListener("click", function(e) {
+      e.preventDefault();
       tabs.forEach(function(t) { t.classList.remove("is-active"); });
       tab.classList.add("is-active");
       var cat = tab.getAttribute("data-category");
@@ -489,14 +518,117 @@ ${buildQuizScript(sorted)}
 `;
 }
 
+// カテゴリごとの一覧ページ(docs/category/{key}.html)。トップページのタブ絞り込みは
+// JSがないと中身が見えない(クローラーにインデックスされにくい)ため、
+// 検索エンジン向けに実体のあるURL・本文を持つページとして別途書き出す。
+function buildCategoryPageHtml(categoryDef, articlesInCategory) {
+  const sorted = articlesInCategory.slice().sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const url = `${site.baseUrl}/category/${categoryDef.key}.html`;
+  const title = `${categoryDef.label}の「辞めたい理由」一覧 | ${site.siteName}`;
+  const description = `${categoryDef.label}に分類される職業の離職理由・「辞めたい」と言われる背景を、統計データにもとづいて整理した記事${sorted.length}本の一覧です。`;
+
+  const listHtml = sorted.length === 0
+    ? `<div class="empty-state">このカテゴリの記事はまだありません。近日公開予定です。</div>`
+    : sorted.map((a) => articleCardHtml(a, "../")).join("");
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    url,
+    description,
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: site.siteName, item: `${site.baseUrl}/` },
+      { "@type": "ListItem", position: 2, name: categoryDef.label, item: url },
+    ],
+  };
+
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(description)}">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+<meta property="og:url" content="${url}">
+<meta property="og:site_name" content="${escapeHtml(site.siteName)}">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
+<script type="application/ld+json">${JSON.stringify(breadcrumbLd)}</script>
+${gaSnippet()}</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="../index.html" class="brand">${escapeHtml(site.siteName)}</a>
+  </div>
+</header>
+<div class="disclosure-banner">本サイトはアフィリエイト広告を利用しています</div>
+
+<main>
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="../index.html">図鑑一覧</a> &gt; ${escapeHtml(categoryDef.label)}
+  </nav>
+  <div class="category-page-header">
+    <h1>${escapeHtml(categoryDef.label)}の「辞めたい理由」一覧</h1>
+    <p>${escapeHtml(description)}</p>
+  </div>
+  <div class="article-list">${listHtml}</div>
+</main>
+
+<footer class="site-footer">
+  <a href="../operator.html">運営者情報</a>
+  <a href="../privacy-policy.html">プライバシーポリシー</a>
+  <a href="../contact.html">お問い合わせ</a>
+</footer>
+</body>
+</html>
+`;
+}
+
+function writeCategoryPages(articles) {
+  fs.mkdirSync(CATEGORY_DIR, { recursive: true });
+  for (const categoryDef of CATEGORIES) {
+    const inCategory = articles.filter((a) => (a.category || inferCategory(a)) === categoryDef.key);
+    if (inCategory.length === 0) continue;
+    fs.writeFileSync(
+      path.join(CATEGORY_DIR, `${categoryDef.key}.html`),
+      buildCategoryPageHtml(categoryDef, inCategory),
+      "utf8"
+    );
+  }
+}
+
 function buildSitemapXml(articles) {
-  const urls = [
-    `${site.baseUrl}/`,
-    ...articles.map((a) => `${site.baseUrl}/articles/${a.slug}.html`),
+  const today = new Date().toISOString().slice(0, 10);
+  const categoryKeys = new Set(articles.map((a) => a.category || inferCategory(a)));
+  const entries = [
+    { loc: `${site.baseUrl}/`, lastmod: today, changefreq: "weekly", priority: "1.0" },
+    ...CATEGORIES
+      .filter((c) => categoryKeys.has(c.key))
+      .map((c) => ({ loc: `${site.baseUrl}/category/${c.key}.html`, lastmod: today, changefreq: "weekly", priority: "0.6" })),
+    ...articles.map((a) => ({
+      loc: `${site.baseUrl}/articles/${a.slug}.html`,
+      lastmod: (a.createdAt || today).slice(0, 10),
+      changefreq: "monthly",
+      priority: "0.7",
+    })),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `  <url><loc>${u}</loc></url>`).join("\n")}
+${entries.map((e) => `  <url><loc>${e.loc}</loc><lastmod>${e.lastmod}</lastmod><changefreq>${e.changefreq}</changefreq><priority>${e.priority}</priority></url>`).join("\n")}
 </urlset>
 `;
 }
@@ -521,6 +653,7 @@ function publishArticle(article) {
 
   fs.writeFileSync(path.join(ARTICLES_DIR, `${article.slug}.html`), buildArticleHtml(article, articles), "utf8");
   fs.writeFileSync(path.join(DOCS_DIR, "index.html"), buildIndexHtml(articles), "utf8");
+  writeCategoryPages(articles);
   fs.writeFileSync(path.join(DOCS_DIR, "sitemap.xml"), buildSitemapXml(articles), "utf8");
   fs.writeFileSync(path.join(DOCS_DIR, "robots.txt"), buildRobotsTxt(), "utf8");
 
@@ -530,6 +663,8 @@ function publishArticle(article) {
 function rebuildIndexOnly() {
   const articles = readArticleIndex();
   fs.writeFileSync(path.join(DOCS_DIR, "index.html"), buildIndexHtml(articles), "utf8");
+  writeCategoryPages(articles);
+  fs.writeFileSync(path.join(DOCS_DIR, "sitemap.xml"), buildSitemapXml(articles), "utf8");
 }
 
 module.exports = { publishArticle, readArticleIndex, writeArticleIndex, rebuildIndexOnly, inferCategory, CATEGORIES, TAG_AXES };

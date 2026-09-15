@@ -98,7 +98,7 @@
   
   <div class="category-tabs" role="tablist">
     <button type="button" class="category-tab is-active" role="tab" data-category="all">すべて<span class="category-tab-count">48</span></button>
-    <button type="button" class="category-tab" role="tab" data-category="iryou_kaigo">① 医療・介護・福祉<span class="category-tab-count">10</span></button><button type="button" class="category-tab" role="tab" data-category="it_engineer">② IT・エンジニア<span class="category-tab-count">5</span></button><button type="button" class="category-tab" role="tab" data-category="eigyo_hanbai">③ 営業・接客・販売<span class="category-tab-count">8</span></button><button type="button" class="category-tab" role="tab" data-category="kyouiku_hoiku">④ 教育・保育<span class="category-tab-count">5</span></button><button type="button" class="category-tab" role="tab" data-category="koumuin">⑤ 公務員・団体職員<span class="category-tab-count">5</span></button><button type="button" class="category-tab" role="tab" data-category="seizou_kensetsu">⑥ 製造・建設・現場系<span class="category-tab-count">5</span></button><button type="button" class="category-tab" role="tab" data-category="jimu_kanri">⑦ 事務・管理部門<span class="category-tab-count">5</span></button><button type="button" class="category-tab" role="tab" data-category="creative_senmon">⑧ クリエイティブ・専門職<span class="category-tab-count">5</span></button>
+    <a href="category/iryou_kaigo.html" class="category-tab" role="tab" data-category="iryou_kaigo">① 医療・介護・福祉<span class="category-tab-count">10</span></a><a href="category/it_engineer.html" class="category-tab" role="tab" data-category="it_engineer">② IT・エンジニア<span class="category-tab-count">5</span></a><a href="category/eigyo_hanbai.html" class="category-tab" role="tab" data-category="eigyo_hanbai">③ 営業・接客・販売<span class="category-tab-count">8</span></a><a href="category/kyouiku_hoiku.html" class="category-tab" role="tab" data-category="kyouiku_hoiku">④ 教育・保育<span class="category-tab-count">5</span></a><a href="category/koumuin.html" class="category-tab" role="tab" data-category="koumuin">⑤ 公務員・団体職員<span class="category-tab-count">5</span></a><a href="category/seizou_kensetsu.html" class="category-tab" role="tab" data-category="seizou_kensetsu">⑥ 製造・建設・現場系<span class="category-tab-count">5</span></a><a href="category/jimu_kanri.html" class="category-tab" role="tab" data-category="jimu_kanri">⑦ 事務・管理部門<span class="category-tab-count">5</span></a><a href="category/creative_senmon.html" class="category-tab" role="tab" data-category="creative_senmon">⑧ クリエイティブ・専門職<span class="category-tab-count">5</span></a>
   </div>
   <div id="article-list" class="article-list"><div class="article-card-wrap" data-category="eigyo_hanbai">
       <a class="article-card" href="articles/hotel-staff-yameru-riyuu.html">
@@ -402,7 +402,8 @@
   var tabs = document.querySelectorAll(".category-tab");
   var cards = document.querySelectorAll(".article-card-wrap");
   tabs.forEach(function(tab) {
-    tab.addEventListener("click", function() {
+    tab.addEventListener("click", function(e) {
+      e.preventDefault();
       tabs.forEach(function(t) { t.classList.remove("is-active"); });
       tab.classList.add("is-active");
       var cat = tab.getAttribute("data-category");
