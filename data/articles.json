@@ -797,6 +797,63 @@
         "schedule": "irregular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "shanai-se-yametai-riyuu",
+      "title": "社内SEが「辞めたい」と感じやすい理由｜離職の実態を統計から整理",
+      "meta": "社内SE(情シス)が辞めたいと感じやすい背景を、厚生労働省の雇用動向調査や情シス実態調査などの統計から7つに整理。負担が集中しやすい構造と、続ける・動くを判断するための材料をまとめました。",
+      "keywords": "社内SE 辞めたい, 社内SE 離職理由, 社内SE 離職率, 情シス 辞めたい",
+      "createdAt": "2026-09-15T02:07:44.064Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "koukou-kyoushi-yametai-riyuu",
+      "title": "高校教師はなぜ「辞めたい」と感じるのか?公的統計から読む離職の実態",
+      "meta": "高校教師の離職はなぜ注目されるのか。文部科学省の人事行政状況調査(令和6年度)・教員勤務実態調査・学校教員統計調査などをもとに、休職や勤務時間の実態、給特法改正の最新状況、続けるか転職を考えるかの判断材料を整理します。",
+      "keywords": "高校教師 辞めたい, 高校教師 離職理由, 教員 離職率, 教師 転職",
+      "createdAt": "2026-09-15T02:18:47.949Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "kokka-koumuin-rishoku-riyuu",
+      "title": "国家公務員の離職はなぜ増えているのか?理由と実態を公的統計から整理",
+      "meta": "国家公務員の離職はなぜ増えているのか。人事院・内閣人事局の公的統計をもとに、総合職若手の退職状況、離職意向の理由、勤務時間や健康面の実態、処遇改善の動きまでを整理し、続けるか転職するかの判断材料をまとめました。",
+      "keywords": "国家公務員 辞めたい理由, 国家公務員 離職率, 官僚 退職 理由, 公務員 転職",
+      "createdAt": "2026-09-15T02:31:01.324Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
     }
   ]
 }
