@@ -98,6 +98,52 @@ function formatDateJa(iso) {
   return `${get("year")}年${get("month")}月${get("day")}日`;
 }
 
+// 本文中の「1. 理由」「理由①:」「上位2:」のような番号付き見出し(離職理由の整理セクション)を
+// トップの折りたたみ要約として再利用する。本文生成プロンプト側の見出し表記ゆれに対応するため
+// 複数パターンを許容し、H3見出しに十分な数の該当があればH3を優先(記事全体の通し番号H3見出しに
+// 誤反応するのを防ぐため)、なければH2見出しにフォールバックする。該当が見つからない場合は
+// 要約ボックス自体を表示しない。
+function extractReasonPoints(bodyMarkdown) {
+  const THEME = "理由|要因|負担|課題|テーマ|論点|上位";
+  const MARKER = "\\d+|[①②③④⑤⑥⑦⑧⑨⑩]";
+  const startRe = new RegExp(`^[(（]?(?:${MARKER})[)）]?[.、:：|｜]?\\s*(.+)$`);
+  const themedRe = new RegExp(`^.*?(?:${THEME})[(（]?(?:${MARKER})[)）]?[.、:：|｜]?\\s*(.+)$`);
+
+  function extractFromLines(lines) {
+    const points = [];
+    for (const line of lines) {
+      const text = line.replace(/^#{2,3}\s+/, "").trim();
+      const m = text.match(startRe) || text.match(themedRe);
+      if (m) {
+        const cleaned = m[1].replace(/\*\*/g, "").replace(/`/g, "").trim();
+        if (cleaned.length >= 3) points.push(cleaned);
+      }
+    }
+    return points;
+  }
+
+  const h3Lines = bodyMarkdown.match(/^###\s+.+$/gm) || [];
+  const h2Lines = bodyMarkdown.match(/^##\s+.+$/gm) || [];
+  const h3Points = extractFromLines(h3Lines);
+  if (h3Points.length >= 2) return h3Points;
+  const h2Points = extractFromLines(h2Lines);
+  return h2Points.length > 0 ? h2Points : h3Points;
+}
+
+function buildSummaryBoxHtml(article) {
+  const points = extractReasonPoints(article.bodyMarkdown);
+  if (points.length === 0) return "";
+  return `
+    <details class="summary-box">
+      <summary class="summary-title">📋 辞める理由・課題まとめ</summary>
+      <div class="summary-body">
+        <ul>
+          ${points.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}
+        </ul>
+      </div>
+    </details>`;
+}
+
 function relatedArticlesHtml(current, allArticles) {
   const others = allArticles.filter((a) => a.slug !== current.slug).slice(0, 3);
   if (others.length === 0) return "";
@@ -250,6 +296,7 @@ ${gaSnippet()}</head>
 
 <main>
   <a href="../index.html" class="back-link">← 図鑑一覧に戻る</a>
+  ${buildSummaryBoxHtml(article)}
   ${buildVoicesSectionHtml(article)}
   <article>
     <header class="article-header">

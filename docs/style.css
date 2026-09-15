@@ -337,6 +337,67 @@ main {
   font-weight: 700;
 }
 
+/* ============ 辞める理由・課題まとめ ============ */
+.summary-box {
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.summary-title {
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.summary-title::-webkit-details-marker {
+  display: none;
+}
+
+.summary-title::after {
+  content: "▾";
+  font-size: 14px;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.summary-box[open] .summary-title::after {
+  transform: rotate(180deg);
+}
+
+.summary-title:hover {
+  background: var(--bg);
+}
+
+.summary-body {
+  padding: 0 24px 24px;
+}
+
+.summary-body ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-body li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
 /* ============ 現場のリアルな声 ============ */
 .voices-box {
   background: var(--panel-bg);
