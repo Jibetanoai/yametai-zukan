@@ -683,6 +683,63 @@
         "schedule": "irregular",
         "license": "required"
       }
+    },
+    {
+      "slug": "biyoushi-yameru-riyuu-tokei",
+      "title": "美容師はなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "美容師の離職率は実際どのくらいか。厚生労働省の統計とホットペッパービューティーアカデミーの実態調査をもとに、給与・拘束時間・下積み・人間関係などの離職理由を年次に注意しながら整理し、続けるか動くかの判断材料をまとめました。",
+      "keywords": "美容師 辞めたい, 美容師 離職率, 美容師 辞める理由, 美容師 転職",
+      "createdAt": "2026-09-15T00:05:13.971Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "low",
+        "income": "low",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "juku-koushi-yameru-riyuu",
+      "title": "塾講師はなぜ辞める人が多いのか?離職率と5つの理由を統計から整理",
+      "meta": "塾講師の離職率は本当に高いのか。厚生労働省の新規学卒就職者の離職状況・雇用動向調査などの公的統計をもとに、勤務時間帯・授業外業務・役割の変化など5つの離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。",
+      "keywords": "塾講師 辞めたい理由, 塾講師 離職率, 塾講師 転職, 教育業界 離職率",
+      "createdAt": "2026-09-15T00:14:23.454Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "shouboushi-yameru-riyuu",
+      "title": "消防士の離職理由とは?「辞めたい」の背景と実態を公的統計から整理",
+      "meta": "消防士の離職について、消防白書・総務省「地方公務員の退職状況等調査」・厚労省「雇用動向調査」などの公的データをもとに整理。勤務形態、身体的負担、惨事ストレス、組織風土などの背景と、続ける/転職を考える際の判断材料をまとめました。",
+      "keywords": "消防士 辞めたい理由, 消防士 離職率, 消防士 転職, 消防士 退職 理由",
+      "createdAt": "2026-09-15T00:25:47.927Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
     }
   ]
 }
