@@ -854,6 +854,63 @@
         "schedule": "irregular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "koujou-kinmu-yameru-riyuu",
+      "title": "工場勤務はなぜ「辞めたい」と言われるのか｜離職理由と実態を統計から整理",
+      "meta": "工場勤務・製造業の離職理由を、厚生労働省の雇用動向調査やものづくり白書をもとに整理。統計上の離職率は全産業平均より低いのに「辞めたい」の声が多い背景、続ける判断・動く判断の分け方まで解説します。",
+      "keywords": "工場勤務 辞めたい, 工場勤務 離職理由, 製造業 離職率, 工場 仕事 きつい 理由",
+      "createdAt": "2026-09-15T05:39:46.863Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "uketsuke-jimu-yameru-riyuu",
+      "title": "受付事務はなぜ辞める人が多いと言われるのか?離職理由と実態を公的統計から整理",
+      "meta": "受付事務を辞めたいと感じる人が多いと言われるのはなぜか。厚生労働省の雇用動向調査などの公的統計をもとに、離職が起きやすい背景を6つに整理。続けるか転職かを判断するためのチェックポイントと、比較の観点もまとめました。",
+      "keywords": "受付事務 辞めたい, 受付事務 離職理由, 受付事務 きつい, 受付事務 転職",
+      "createdAt": "2026-09-15T05:51:34.493Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "low",
+        "pressure": "low",
+        "schedule": "regular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "hotel-staff-yameru-riyuu",
+      "title": "ホテルスタッフはなぜ辞める人が多いのか?離職理由と実態を公的統計から整理",
+      "meta": "ホテル・宿泊業の離職率は本当に高いのか。厚生労働省の雇用動向調査や観光庁の実態調査をもとに、ホテルスタッフが辞める理由を7つに整理し、職種ごとの事情や「続ける/変える」の判断材料までまとめました。",
+      "keywords": "ホテル 辞めたい 理由, ホテル業界 離職率, ホテルスタッフ 転職, 宿泊業 離職理由",
+      "createdAt": "2026-09-15T06:02:37.636Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
     }
   ]
 }
