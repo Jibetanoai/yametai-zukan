@@ -911,6 +911,63 @@
         "schedule": "irregular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "backend-engineer-yameru-riyuu",
+      "title": "バックエンドエンジニアは本当に辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "バックエンドエンジニアの離職は本当に多いのか。厚生労働省の雇用動向調査やdodaの転職理由ランキングをもとに、辞めたくなる理由を7つに分類し、職場差の見分け方と「続けるか転職か」の判断材料を整理します。",
+      "keywords": "バックエンドエンジニア 辞めたい,バックエンドエンジニア 離職率,バックエンドエンジニア 転職理由,サーバーサイドエンジニア きつい",
+      "createdAt": "2026-09-15T11:12:06.151Z",
+      "category": "it_engineer",
+      "tags": {
+        "physical": "low",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "high",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "chugakko-kyoushi-yameru-riyuu",
+      "title": "中学校の先生はなぜ辞める人が多いと言われるのか|離職理由と実態を公的統計から整理",
+      "meta": "中学校教師の離職はなぜ話題になるのか。教員勤務実態調査・人事行政状況調査・地方公務員の退職状況等調査などの公的データをもとに、長時間勤務・部活動・対人対応といった離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。",
+      "keywords": "中学校教師 辞めたい, 中学校教員 離職理由, 教員 離職率, 教員 転職",
+      "createdAt": "2026-09-15T11:21:31.476Z",
+      "category": "kyouiku_hoiku",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "graphic-designer-yameru-riyuu",
+      "title": "グラフィックデザイナーはなぜ辞める人が多いのか?離職理由と実態を統計から整理",
+      "meta": "グラフィックデザイナーの離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や民間調査をもとに整理。年収の年次差、残業の波、評価の仕組み、生成AIの影響まで、辞めたいと感じたときの判断材料をまとめました。",
+      "keywords": "グラフィックデザイナー 辞めたい, グラフィックデザイナー 離職率, グラフィックデザイナー 転職, デザイナー 辞める理由",
+      "createdAt": "2026-09-15T11:34:27.210Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "medium",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
     }
   ]
 }
