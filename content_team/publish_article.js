@@ -257,6 +257,17 @@ function buildVoicesScript() {
 </script>`;
 }
 
+// 全記事共通のCTA。将来アフィリエイト提携が決まるまでは、ホームの
+// 「おすすめ職業診断」への導線として使う(提携が決まったら差し替える)。
+function hubCtaHtml() {
+  return `
+    <div class="hub-cta">
+      <p class="hub-cta-label">🔍 おすすめ職業診断</p>
+      <p class="hub-cta-text">自分に合う仕事、簡単な質問に答えるだけで見てみない?</p>
+      <a class="hub-cta-button" href="../index.html#quiz-box">おすすめ職業診断をやってみる →</a>
+    </div>`;
+}
+
 function buildArticleHtml(article, allArticles) {
   const url = `${site.baseUrl}/articles/${article.slug}.html`;
   const bodyHtml = markdownToHtml(article.bodyMarkdown);
@@ -334,6 +345,7 @@ ${gaSnippet()}</head>
     <div class="article-body">
       ${bodyHtml}
     </div>
+    ${hubCtaHtml()}
     <div class="article-disclaimer">
       本記事は情報提供を目的としており、特定の職業や企業を批判・断定するものではありません。感じ方には個人差があります。本サイトはアフィリエイト広告を利用しています。
     </div>
@@ -364,7 +376,7 @@ function articleCardHtml(a, basePath = "") {
 
 function buildQuizHtml() {
   return `
-  <details class="quiz-box">
+  <details class="quiz-box" id="quiz-box">
     <summary class="quiz-title">🔍 あなたにおすすめの職業は?</summary>
     <div class="quiz-body">
     <p class="quiz-desc">当てはまる条件を選んで診断してみてください(こだわらない軸は空欄のままでOK)。</p>

@@ -601,6 +601,38 @@ main {
   line-height: 1.7;
 }
 
+.hub-cta {
+  margin-top: 40px;
+  padding: 20px 22px;
+  background: var(--panel-bg);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+}
+.hub-cta-label {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-ink);
+  letter-spacing: 0.02em;
+}
+.hub-cta-text {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.hub-cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.hub-cta-button:hover { background: var(--accent-ink); }
+
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
