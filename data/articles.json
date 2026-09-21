@@ -968,6 +968,120 @@
         "schedule": "irregular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "jieikan-yameru-riyuu",
+      "title": "自衛官はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理",
+      "meta": "自衛官の中途退職者は年間5,600〜6,300人規模。防衛省の公表資料や国会提出資料をもとに、退職の種類ごとの実態、辞める理由として挙がりやすい6つの要因、若年定年制とセカンドキャリア、処遇改善の最新動向までを整理しました。",
+      "keywords": "自衛官 辞めたい理由, 自衛隊 離職率, 自衛官 中途退職, 自衛官 転職",
+      "createdAt": "2026-09-21T09:48:10.473Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "kokuzei-senmonkan-yameru-riyuu",
+      "title": "国税専門官・税務署職員はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理",
+      "meta": "国税専門官・税務署職員の離職理由を、人事院・国税庁・厚生労働省などの公的統計をもとに整理。転勤や繁忙期、精神的負荷といった背景と、続ける場合・転職を考える場合の判断材料をまとめました。",
+      "keywords": "国税専門官 辞めたい理由, 税務署職員 離職率, 国税専門官 転職, 国税専門官 やめとけ",
+      "createdAt": "2026-09-21T09:54:14.497Z",
+      "category": "koumuin",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "denki-koujishi-yameru-riyuu",
+      "title": "電気工事士はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理",
+      "meta": "電気工事士の離職率は本当に高いのか。厚生労働省の雇用動向調査や国土交通省の資料など公的統計をもとに、辞めたいと感じやすい7つの理由と業界の実態を整理。続けるか転職するかを判断するための材料と、資格が活きる選択肢もまとめました。",
+      "keywords": "電気工事士 辞めたい, 電気工事士 離職率, 電気工事士 辞める理由, 電気工事士 転職",
+      "createdAt": "2026-09-21T10:00:03.859Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "team",
+        "place": "field",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "souko-sagyouin-yameru-riyuu",
+      "title": "倉庫作業員(物流・軽作業)はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理",
+      "meta": "倉庫作業員・物流軽作業は離職が多いと言われることがありますが、公的統計を見ると印象と実態にズレがあります。雇用動向調査や労働災害統計をもとに離職理由を7つに整理し、続けるか転職かの判断材料をまとめました。",
+      "keywords": "倉庫作業員 辞めたい理由, 物流倉庫 離職率, 軽作業 きつい, 倉庫作業員 転職",
+      "createdAt": "2026-09-21T10:06:13.415Z",
+      "category": "seizou_kensetsu",
+      "tags": {
+        "physical": "high",
+        "people": "medium",
+        "style": "team",
+        "place": "field",
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "houmubu-yameru-riyuu-toukei",
+      "title": "法務部はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理",
+      "meta": "法務部は辞める人が多いと言われがちですが、公的統計では確認できないのが実情です。雇用動向調査や業界調査をもとに、一人法務の負担・評価のされにくさなど語られやすい離職理由を整理し、辞める前の確認ポイントと転職の比較軸まで解説します。",
+      "keywords": "法務 辞めたい, 法務部 離職理由, 企業法務 転職, 一人法務 つらい",
+      "createdAt": "2026-09-21T10:11:59.135Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "high",
+        "income": "medium",
+        "pressure": "high",
+        "schedule": "regular",
+        "license": "notRequired"
+      }
+    },
+    {
+      "slug": "boueki-jimu-yameru-riyuu",
+      "title": "貿易事務はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理",
+      "meta": "貿易事務は辞める人が多いと言われがちですが、実際はどうでしょうか。厚生労働省の雇用動向調査や民間調査をもとに、離職理由として語られやすいテーマと、辞める前に整理したい判断軸をまとめました。",
+      "keywords": "貿易事務 辞めたい, 貿易事務 離職率, 貿易事務 きつい 理由, 貿易事務 転職",
+      "createdAt": "2026-09-21T10:19:04.201Z",
+      "category": "jimu_kanri",
+      "tags": {
+        "physical": "low",
+        "people": "high",
+        "style": "team",
+        "place": "desk",
+        "stability": "medium",
+        "income": "medium",
+        "pressure": "medium",
+        "schedule": "regular",
+        "license": "notRequired"
+      }
     }
   ]
 }

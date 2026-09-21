@@ -29,10 +29,10 @@ const CATEGORY_KEYWORD_RULES = [
   { key: "it_engineer", words: ["エンジニア", "プログラマ", "SE", "IT", "システム"] },
   { key: "eigyo_hanbai", words: ["営業", "販売", "接客", "小売", "飲食店", "美容師", "アパレル"] },
   { key: "kyouiku_hoiku", words: ["教師", "保育士", "教員", "塾講師", "幼稚園"] },
-  { key: "koumuin", words: ["公務員", "自治体", "役所", "警察官", "消防士"] },
-  { key: "seizou_kensetsu", words: ["工場", "製造", "建設", "現場", "配送", "ドライバー", "トラック"] },
+  { key: "koumuin", words: ["公務員", "自治体", "役所", "警察官", "消防士", "自衛官", "国税専門官", "税務署"] },
+  { key: "seizou_kensetsu", words: ["工場", "製造", "建設", "現場", "配送", "ドライバー", "トラック", "電気工事", "倉庫", "物流"] },
   { key: "creative_senmon", words: ["デザイナー", "クリエイティブ", "編集者", "士業", "弁護士", "税理士", "コンサル"] },
-  { key: "jimu_kanri", words: ["事務", "経理", "総務", "人事", "管理部門"] },
+  { key: "jimu_kanri", words: ["事務", "経理", "総務", "人事", "管理部門", "法務"] },
 ];
 function inferCategory(article) {
   const text = `${article.title || ""} ${article.topic || ""}`;
