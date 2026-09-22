@@ -1082,6 +1082,63 @@
         "schedule": "regular",
         "license": "notRequired"
       }
+    },
+    {
+      "slug": "ishi-yametai-riyuu",
+      "title": "医師が「辞めたい」と感じる理由10選｜公的統計・アンケートから読み解く勤務医のリアル",
+      "meta": "医師が仕事を辞めたい・転職したいと考える理由を、厚生労働省の調査や医師向けアンケートをもとに整理。長時間労働、医局人事、人間関係、ライフイベントなどの背景と、続けるか動くかの判断材料を解説します。",
+      "keywords": "医師 辞めたい, 医師 転職理由, 勤務医 退職理由, 医師 働き方改革",
+      "createdAt": "2026-09-22T07:57:15.145Z",
+      "category": "iryou_kaigo",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "koninkaikeishi-yametai-riyuu",
+      "title": "公認会計士が「辞めたい」と感じる7つの理由｜データで見る監査法人離職の実態とキャリアの選択肢",
+      "meta": "公認会計士・監査法人勤務の人が「辞めたい」と感じやすい理由を、公的統計や日本公認会計士協会の資料をもとに7つに整理。辞めたくなりやすい時期、辞める以外の選択肢、転職を考える際の比較の観点まで解説します。",
+      "keywords": "公認会計士 辞めたい, 監査法人 辞めたい 理由, 公認会計士 離職率, 公認会計士 転職",
+      "createdAt": "2026-09-22T08:02:32.259Z",
+      "category": "creative_senmon",
+      "tags": {
+        "physical": "medium",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "high",
+        "income": "high",
+        "pressure": "high",
+        "schedule": "irregular",
+        "license": "required"
+      }
+    },
+    {
+      "slug": "inshokuten-staff-yametai-riyuu",
+      "title": "飲食店スタッフが「辞めたい」と感じる理由7選｜公的データで見る離職の背景と、続ける・変えるの判断材料",
+      "meta": "飲食店スタッフの離職率・賃金水準・辞めたい理由を、厚生労働省の雇用動向調査や賃金構造基本統計調査など公的データをもとに整理。長時間労働・休日・賃金・人間関係など7つの背景と、今の職場を続けるか転職を考えるかの判断材料をまとめました。",
+      "keywords": "飲食店 辞めたい理由, 飲食店スタッフ 離職率, 飲食業 転職, 飲食店 正社員 きつい",
+      "createdAt": "2026-09-22T08:08:05.777Z",
+      "category": "eigyo_hanbai",
+      "tags": {
+        "physical": "high",
+        "people": "high",
+        "style": "team",
+        "place": "field",
+        "stability": "medium",
+        "income": "low",
+        "pressure": "medium",
+        "schedule": "irregular",
+        "license": "notRequired"
+      }
     }
   ]
 }
