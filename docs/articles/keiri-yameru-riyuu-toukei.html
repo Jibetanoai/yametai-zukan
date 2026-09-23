@@ -74,7 +74,7 @@
     <details class="voices-box" id="voices-box" data-slug="keiri-yameru-riyuu-toukei">
       <summary class="voices-title">💬 実際に働いている人の声</summary>
       <div class="voices-body">
-      <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、すぐに公開されます。個人名・会社名など個人や団体を特定できる内容、誹謗中傷にあたる内容は書かないでください。運営者の判断で削除することがあります(<a href="../privacy-policy.html">プライバシーポリシー</a>)。</p>
+      <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、運営者が内容を確認したうえで公開します(公開まで数日かかることがあります)。個人名・会社名など個人や団体を特定できる内容、誹謗中傷にあたる内容は公開しません(<a href="../privacy-policy.html">プライバシーポリシー</a>)。</p>
       <textarea id="voice-input" class="voice-textarea" placeholder="例: 人手不足で有給が取りづらい。でもやりがいはある、など(5〜1000字)" maxlength="1000"></textarea>
       <button type="button" id="voice-submit" class="voice-submit">投稿する</button>
       <p id="voice-status" class="voice-status" hidden></p>
@@ -123,7 +123,7 @@
 
   function renderVoices(rows) {
     if (!rows || rows.length === 0) {
-      listEl.innerHTML = "<p class=\"voices-empty\">まだ声が投稿されていません。最初の投稿者になってみませんか?</p>";
+      listEl.innerHTML = "<p class=\"voices-empty\">まだ公開されている声はありません。最初の投稿者になってみませんか?</p>";
       return;
     }
     listEl.innerHTML = rows.map(function(r) {
@@ -134,7 +134,7 @@
   }
 
   function loadVoices() {
-    fetch(SUPABASE_URL + "/rest/v1/voices?occupation_slug=eq." + encodeURIComponent(slug) + "&select=body,created_at&order=created_at.desc&limit=50", {
+    fetch(SUPABASE_URL + "/rest/v1/voices?occupation_slug=eq." + encodeURIComponent(slug) + "&status=eq.approved&select=body,created_at&order=created_at.desc&limit=50", {
       headers: { apikey: API_KEY, Authorization: "Bearer " + API_KEY }
     }).then(function(r) { return r.json(); }).then(renderVoices).catch(function() {
       listEl.innerHTML = "<p class=\"voices-empty\">声を読み込めませんでした。</p>";
@@ -164,9 +164,8 @@
       body: JSON.stringify({ occupation_slug: slug, body: body })
     }).then(function(r) {
       if (!r.ok) throw new Error("failed");
-      statusEl.textContent = "投稿しました。ありがとうございます!";
+      statusEl.textContent = "投稿を受け付けました。運営者が内容を確認したうえで公開します。ありがとうございます!";
       input.value = "";
-      loadVoices();
     }).catch(function() {
       statusEl.textContent = "投稿に失敗しました。時間をおいて試してください。";
     });
