@@ -10,7 +10,17 @@
 <meta property="og:title" content="仕事やめたい図鑑 | 職業別・辞めたくなる理由の図鑑">
 <meta property="og:description" content="職業ごとに「辞めたくなる理由」を、統計データや公的調査にもとづいて図鑑形式で整理するメディアです。転職を考えるときの判断材料として。">
 <meta property="og:url" content="https://jibetanoai.github.io/yametai-zukan/">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="仕事やめたい図鑑">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://jibetanoai.github.io/yametai-zukan/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jibetanoai.github.io/yametai-zukan/ogp.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a2224" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="google-site-verification" content="E_oY6GkObFt6waLKSW154p4tl-7QcjyE4fEmFGhzcOg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +34,7 @@
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="index.html" class="brand">仕事やめたい図鑑</a>
+    <h1 class="brand-heading"><a href="index.html" class="brand">仕事やめたい図鑑</a></h1>
     <p class="site-tagline">職業ごとの「辞めたくなる理由」を、データにもとづいて図鑑形式で整理</p>
   </div>
 </header>
@@ -96,371 +106,376 @@
     </div>
   </details>
   
-  <div class="category-tabs" role="tablist">
-    <button type="button" class="category-tab is-active" role="tab" data-category="all">すべて<span class="category-tab-count">60</span></button>
-    <a href="category/iryou_kaigo.html" class="category-tab" role="tab" data-category="iryou_kaigo">① 医療・介護・福祉<span class="category-tab-count">11</span></a><a href="category/it_engineer.html" class="category-tab" role="tab" data-category="it_engineer">② IT・エンジニア<span class="category-tab-count">6</span></a><a href="category/eigyo_hanbai.html" class="category-tab" role="tab" data-category="eigyo_hanbai">③ 営業・接客・販売<span class="category-tab-count">9</span></a><a href="category/kyouiku_hoiku.html" class="category-tab" role="tab" data-category="kyouiku_hoiku">④ 教育・保育<span class="category-tab-count">6</span></a><a href="category/koumuin.html" class="category-tab" role="tab" data-category="koumuin">⑤ 公務員・団体職員<span class="category-tab-count">7</span></a><a href="category/seizou_kensetsu.html" class="category-tab" role="tab" data-category="seizou_kensetsu">⑥ 製造・建設・現場系<span class="category-tab-count">7</span></a><a href="category/jimu_kanri.html" class="category-tab" role="tab" data-category="jimu_kanri">⑦ 事務・管理部門<span class="category-tab-count">7</span></a><a href="category/creative_senmon.html" class="category-tab" role="tab" data-category="creative_senmon">⑧ クリエイティブ・専門職<span class="category-tab-count">7</span></a>
+  <div class="article-search">
+    <input type="search" id="article-search-input" placeholder="職業名で検索(例:看護師、エンジニア)" aria-label="職業名・キーワードで検索">
   </div>
-  <div id="article-list" class="article-list"><div class="article-card-wrap" data-category="eigyo_hanbai">
+  
+  <div class="category-tabs" role="tablist">
+    <button type="button" class="category-tab is-active" role="tab" aria-selected="true" data-category="all">すべて<span class="category-tab-count">60</span></button>
+    <a href="category/iryou_kaigo.html" class="category-tab" role="tab" aria-selected="false" data-category="iryou_kaigo">① 医療・介護・福祉<span class="category-tab-count">11</span></a><a href="category/it_engineer.html" class="category-tab" role="tab" aria-selected="false" data-category="it_engineer">② IT・エンジニア<span class="category-tab-count">6</span></a><a href="category/eigyo_hanbai.html" class="category-tab" role="tab" aria-selected="false" data-category="eigyo_hanbai">③ 営業・接客・販売<span class="category-tab-count">9</span></a><a href="category/kyouiku_hoiku.html" class="category-tab" role="tab" aria-selected="false" data-category="kyouiku_hoiku">④ 教育・保育<span class="category-tab-count">6</span></a><a href="category/koumuin.html" class="category-tab" role="tab" aria-selected="false" data-category="koumuin">⑤ 公務員・団体職員<span class="category-tab-count">7</span></a><a href="category/seizou_kensetsu.html" class="category-tab" role="tab" aria-selected="false" data-category="seizou_kensetsu">⑥ 製造・建設・現場系<span class="category-tab-count">7</span></a><a href="category/jimu_kanri.html" class="category-tab" role="tab" aria-selected="false" data-category="jimu_kanri">⑦ 事務・管理部門<span class="category-tab-count">7</span></a><a href="category/creative_senmon.html" class="category-tab" role="tab" aria-selected="false" data-category="creative_senmon">⑧ クリエイティブ・専門職<span class="category-tab-count">7</span></a>
+  </div>
+  <div id="article-list" class="article-list"><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="飲食店スタッフが「辞めたい」と感じる理由7選｜公的データで見る離職の背景と、続ける・変えるの判断材料 飲食店スタッフの離職率・賃金水準・辞めたい理由を、厚生労働省の雇用動向調査や賃金構造基本統計調査など公的データをもとに整理。長時間労働・休日・賃金・人間関係など7つの背景と、今の職場を続けるか転職を考えるかの判断材料をまとめました。 飲食店 辞めたい理由, 飲食店スタッフ 離職率, 飲食業 転職, 飲食店 正社員 きつい">
       <a class="article-card" href="articles/inshokuten-staff-yametai-riyuu.html">
         <div class="article-card-date">2026年9月22日</div>
         <h2>飲食店スタッフが「辞めたい」と感じる理由7選｜公的データで見る離職の背景と、続ける・変えるの判断材料</h2>
         <p>飲食店スタッフの離職率・賃金水準・辞めたい理由を、厚生労働省の雇用動向調査や賃金構造基本統計調査など公的データをもとに整理。長時間労働・休日・賃金・人間関係など7つの背景と、今の職場を続けるか転職を考えるかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="公認会計士が「辞めたい」と感じる7つの理由｜データで見る監査法人離職の実態とキャリアの選択肢 公認会計士・監査法人勤務の人が「辞めたい」と感じやすい理由を、公的統計や日本公認会計士協会の資料をもとに7つに整理。辞めたくなりやすい時期、辞める以外の選択肢、転職を考える際の比較の観点まで解説します。 公認会計士 辞めたい, 監査法人 辞めたい 理由, 公認会計士 離職率, 公認会計士 転職">
       <a class="article-card" href="articles/koninkaikeishi-yametai-riyuu.html">
         <div class="article-card-date">2026年9月22日</div>
         <h2>公認会計士が「辞めたい」と感じる7つの理由｜データで見る監査法人離職の実態とキャリアの選択肢</h2>
         <p>公認会計士・監査法人勤務の人が「辞めたい」と感じやすい理由を、公的統計や日本公認会計士協会の資料をもとに7つに整理。辞めたくなりやすい時期、辞める以外の選択肢、転職を考える際の比較の観点まで解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="医師が「辞めたい」と感じる理由10選｜公的統計・アンケートから読み解く勤務医のリアル 医師が仕事を辞めたい・転職したいと考える理由を、厚生労働省の調査や医師向けアンケートをもとに整理。長時間労働、医局人事、人間関係、ライフイベントなどの背景と、続けるか動くかの判断材料を解説します。 医師 辞めたい, 医師 転職理由, 勤務医 退職理由, 医師 働き方改革">
       <a class="article-card" href="articles/ishi-yametai-riyuu.html">
         <div class="article-card-date">2026年9月22日</div>
         <h2>医師が「辞めたい」と感じる理由10選｜公的統計・アンケートから読み解く勤務医のリアル</h2>
         <p>医師が仕事を辞めたい・転職したいと考える理由を、厚生労働省の調査や医師向けアンケートをもとに整理。長時間労働、医局人事、人間関係、ライフイベントなどの背景と、続けるか動くかの判断材料を解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="貿易事務はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理 貿易事務は辞める人が多いと言われがちですが、実際はどうでしょうか。厚生労働省の雇用動向調査や民間調査をもとに、離職理由として語られやすいテーマと、辞める前に整理したい判断軸をまとめました。 貿易事務 辞めたい, 貿易事務 離職率, 貿易事務 きつい 理由, 貿易事務 転職">
       <a class="article-card" href="articles/boueki-jimu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>貿易事務はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理</h2>
         <p>貿易事務は辞める人が多いと言われがちですが、実際はどうでしょうか。厚生労働省の雇用動向調査や民間調査をもとに、離職理由として語られやすいテーマと、辞める前に整理したい判断軸をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="法務部はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理 法務部は辞める人が多いと言われがちですが、公的統計では確認できないのが実情です。雇用動向調査や業界調査をもとに、一人法務の負担・評価のされにくさなど語られやすい離職理由を整理し、辞める前の確認ポイントと転職の比較軸まで解説します。 法務 辞めたい, 法務部 離職理由, 企業法務 転職, 一人法務 つらい">
       <a class="article-card" href="articles/houmubu-yameru-riyuu-toukei.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>法務部はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理</h2>
         <p>法務部は辞める人が多いと言われがちですが、公的統計では確認できないのが実情です。雇用動向調査や業界調査をもとに、一人法務の負担・評価のされにくさなど語られやすい離職理由を整理し、辞める前の確認ポイントと転職の比較軸まで解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="倉庫作業員(物流・軽作業)はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理 倉庫作業員・物流軽作業は離職が多いと言われることがありますが、公的統計を見ると印象と実態にズレがあります。雇用動向調査や労働災害統計をもとに離職理由を7つに整理し、続けるか転職かの判断材料をまとめました。 倉庫作業員 辞めたい理由, 物流倉庫 離職率, 軽作業 きつい, 倉庫作業員 転職">
       <a class="article-card" href="articles/souko-sagyouin-yameru-riyuu.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>倉庫作業員(物流・軽作業)はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理</h2>
         <p>倉庫作業員・物流軽作業は離職が多いと言われることがありますが、公的統計を見ると印象と実態にズレがあります。雇用動向調査や労働災害統計をもとに離職理由を7つに整理し、続けるか転職かの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="電気工事士はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理 電気工事士の離職率は本当に高いのか。厚生労働省の雇用動向調査や国土交通省の資料など公的統計をもとに、辞めたいと感じやすい7つの理由と業界の実態を整理。続けるか転職するかを判断するための材料と、資格が活きる選択肢もまとめました。 電気工事士 辞めたい, 電気工事士 離職率, 電気工事士 辞める理由, 電気工事士 転職">
       <a class="article-card" href="articles/denki-koujishi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>電気工事士はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理</h2>
         <p>電気工事士の離職率は本当に高いのか。厚生労働省の雇用動向調査や国土交通省の資料など公的統計をもとに、辞めたいと感じやすい7つの理由と業界の実態を整理。続けるか転職するかを判断するための材料と、資格が活きる選択肢もまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="国税専門官・税務署職員はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理 国税専門官・税務署職員の離職理由を、人事院・国税庁・厚生労働省などの公的統計をもとに整理。転勤や繁忙期、精神的負荷といった背景と、続ける場合・転職を考える場合の判断材料をまとめました。 国税専門官 辞めたい理由, 税務署職員 離職率, 国税専門官 転職, 国税専門官 やめとけ">
       <a class="article-card" href="articles/kokuzei-senmonkan-yameru-riyuu.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>国税専門官・税務署職員はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理</h2>
         <p>国税専門官・税務署職員の離職理由を、人事院・国税庁・厚生労働省などの公的統計をもとに整理。転勤や繁忙期、精神的負荷といった背景と、続ける場合・転職を考える場合の判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="自衛官はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理 自衛官の中途退職者は年間5,600〜6,300人規模。防衛省の公表資料や国会提出資料をもとに、退職の種類ごとの実態、辞める理由として挙がりやすい6つの要因、若年定年制とセカンドキャリア、処遇改善の最新動向までを整理しました。 自衛官 辞めたい理由, 自衛隊 離職率, 自衛官 中途退職, 自衛官 転職">
       <a class="article-card" href="articles/jieikan-yameru-riyuu.html">
         <div class="article-card-date">2026年9月21日</div>
         <h2>自衛官はなぜ「辞める人が多い」と言われるのか|離職理由と実態を統計から整理</h2>
         <p>自衛官の中途退職者は年間5,600〜6,300人規模。防衛省の公表資料や国会提出資料をもとに、退職の種類ごとの実態、辞める理由として挙がりやすい6つの要因、若年定年制とセカンドキャリア、処遇改善の最新動向までを整理しました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="グラフィックデザイナーはなぜ辞める人が多いのか?離職理由と実態を統計から整理 グラフィックデザイナーの離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や民間調査をもとに整理。年収の年次差、残業の波、評価の仕組み、生成aiの影響まで、辞めたいと感じたときの判断材料をまとめました。 グラフィックデザイナー 辞めたい, グラフィックデザイナー 離職率, グラフィックデザイナー 転職, デザイナー 辞める理由">
       <a class="article-card" href="articles/graphic-designer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>グラフィックデザイナーはなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>グラフィックデザイナーの離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や民間調査をもとに整理。年収の年次差、残業の波、評価の仕組み、生成AIの影響まで、辞めたいと感じたときの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="中学校の先生はなぜ辞める人が多いと言われるのか|離職理由と実態を公的統計から整理 中学校教師の離職はなぜ話題になるのか。教員勤務実態調査・人事行政状況調査・地方公務員の退職状況等調査などの公的データをもとに、長時間勤務・部活動・対人対応といった離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。 中学校教師 辞めたい, 中学校教員 離職理由, 教員 離職率, 教員 転職">
       <a class="article-card" href="articles/chugakko-kyoushi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>中学校の先生はなぜ辞める人が多いと言われるのか|離職理由と実態を公的統計から整理</h2>
         <p>中学校教師の離職はなぜ話題になるのか。教員勤務実態調査・人事行政状況調査・地方公務員の退職状況等調査などの公的データをもとに、長時間勤務・部活動・対人対応といった離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="バックエンドエンジニアは本当に辞める人が多いのか?離職理由と実態を統計から整理 バックエンドエンジニアの離職は本当に多いのか。厚生労働省の雇用動向調査やdodaの転職理由ランキングをもとに、辞めたくなる理由を7つに分類し、職場差の見分け方と「続けるか転職か」の判断材料を整理します。 バックエンドエンジニア 辞めたい,バックエンドエンジニア 離職率,バックエンドエンジニア 転職理由,サーバーサイドエンジニア きつい">
       <a class="article-card" href="articles/backend-engineer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>バックエンドエンジニアは本当に辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>バックエンドエンジニアの離職は本当に多いのか。厚生労働省の雇用動向調査やdodaの転職理由ランキングをもとに、辞めたくなる理由を7つに分類し、職場差の見分け方と「続けるか転職か」の判断材料を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="ホテルスタッフはなぜ辞める人が多いのか?離職理由と実態を公的統計から整理 ホテル・宿泊業の離職率は本当に高いのか。厚生労働省の雇用動向調査や観光庁の実態調査をもとに、ホテルスタッフが辞める理由を7つに整理し、職種ごとの事情や「続ける/変える」の判断材料までまとめました。 ホテル 辞めたい 理由, ホテル業界 離職率, ホテルスタッフ 転職, 宿泊業 離職理由">
       <a class="article-card" href="articles/hotel-staff-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>ホテルスタッフはなぜ辞める人が多いのか?離職理由と実態を公的統計から整理</h2>
         <p>ホテル・宿泊業の離職率は本当に高いのか。厚生労働省の雇用動向調査や観光庁の実態調査をもとに、ホテルスタッフが辞める理由を7つに整理し、職種ごとの事情や「続ける/変える」の判断材料までまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="受付事務はなぜ辞める人が多いと言われるのか?離職理由と実態を公的統計から整理 受付事務を辞めたいと感じる人が多いと言われるのはなぜか。厚生労働省の雇用動向調査などの公的統計をもとに、離職が起きやすい背景を6つに整理。続けるか転職かを判断するためのチェックポイントと、比較の観点もまとめました。 受付事務 辞めたい, 受付事務 離職理由, 受付事務 きつい, 受付事務 転職">
       <a class="article-card" href="articles/uketsuke-jimu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>受付事務はなぜ辞める人が多いと言われるのか?離職理由と実態を公的統計から整理</h2>
         <p>受付事務を辞めたいと感じる人が多いと言われるのはなぜか。厚生労働省の雇用動向調査などの公的統計をもとに、離職が起きやすい背景を6つに整理。続けるか転職かを判断するためのチェックポイントと、比較の観点もまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="工場勤務はなぜ「辞めたい」と言われるのか｜離職理由と実態を統計から整理 工場勤務・製造業の離職理由を、厚生労働省の雇用動向調査やものづくり白書をもとに整理。統計上の離職率は全産業平均より低いのに「辞めたい」の声が多い背景、続ける判断・動く判断の分け方まで解説します。 工場勤務 辞めたい, 工場勤務 離職理由, 製造業 離職率, 工場 仕事 きつい 理由">
       <a class="article-card" href="articles/koujou-kinmu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>工場勤務はなぜ「辞めたい」と言われるのか｜離職理由と実態を統計から整理</h2>
         <p>工場勤務・製造業の離職理由を、厚生労働省の雇用動向調査やものづくり白書をもとに整理。統計上の離職率は全産業平均より低いのに「辞めたい」の声が多い背景、続ける判断・動く判断の分け方まで解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="国家公務員の離職はなぜ増えているのか?理由と実態を公的統計から整理 国家公務員の離職はなぜ増えているのか。人事院・内閣人事局の公的統計をもとに、総合職若手の退職状況、離職意向の理由、勤務時間や健康面の実態、処遇改善の動きまでを整理し、続けるか転職するかの判断材料をまとめました。 国家公務員 辞めたい理由, 国家公務員 離職率, 官僚 退職 理由, 公務員 転職">
       <a class="article-card" href="articles/kokka-koumuin-rishoku-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>国家公務員の離職はなぜ増えているのか?理由と実態を公的統計から整理</h2>
         <p>国家公務員の離職はなぜ増えているのか。人事院・内閣人事局の公的統計をもとに、総合職若手の退職状況、離職意向の理由、勤務時間や健康面の実態、処遇改善の動きまでを整理し、続けるか転職するかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="高校教師はなぜ「辞めたい」と感じるのか?公的統計から読む離職の実態 高校教師の離職はなぜ注目されるのか。文部科学省の人事行政状況調査(令和6年度)・教員勤務実態調査・学校教員統計調査などをもとに、休職や勤務時間の実態、給特法改正の最新状況、続けるか転職を考えるかの判断材料を整理します。 高校教師 辞めたい, 高校教師 離職理由, 教員 離職率, 教師 転職">
       <a class="article-card" href="articles/koukou-kyoushi-yametai-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>高校教師はなぜ「辞めたい」と感じるのか?公的統計から読む離職の実態</h2>
         <p>高校教師の離職はなぜ注目されるのか。文部科学省の人事行政状況調査(令和6年度)・教員勤務実態調査・学校教員統計調査などをもとに、休職や勤務時間の実態、給特法改正の最新状況、続けるか転職を考えるかの判断材料を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="社内seが「辞めたい」と感じやすい理由｜離職の実態を統計から整理 社内se(情シス)が辞めたいと感じやすい背景を、厚生労働省の雇用動向調査や情シス実態調査などの統計から7つに整理。負担が集中しやすい構造と、続ける・動くを判断するための材料をまとめました。 社内se 辞めたい, 社内se 離職理由, 社内se 離職率, 情シス 辞めたい">
       <a class="article-card" href="articles/shanai-se-yametai-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>社内SEが「辞めたい」と感じやすい理由｜離職の実態を統計から整理</h2>
         <p>社内SE(情シス)が辞めたいと感じやすい背景を、厚生労働省の雇用動向調査や情シス実態調査などの統計から7つに整理。負担が集中しやすい構造と、続ける・動くを判断するための材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="経営コンサルタントは「辞める人が多い」と言われるのはなぜか?離職理由と実態を統計から検証 経営コンサルタントの離職率は本当に高いのか。厚生労働省「雇用動向調査」や転職理由調査をもとに、語られる離職理由を7つに整理し、続けるか動くかを判断するための材料をまとめました。 経営コンサルタント 辞めたい, コンサル 離職率, コンサルタント 離職理由, コンサル 辞める理由">
       <a class="article-card" href="articles/keiei-consultant-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>経営コンサルタントは「辞める人が多い」と言われるのはなぜか?離職理由と実態を統計から検証</h2>
         <p>経営コンサルタントの離職率は本当に高いのか。厚生労働省「雇用動向調査」や転職理由調査をもとに、語られる離職理由を7つに整理し、続けるか動くかを判断するための材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="宅配ドライバーは本当に「辞める人が多い」のか?統計で見る離職率と離職理由の実態 宅配ドライバーの離職率は本当に高いのか。厚労省の雇用動向調査や国交省の公表データをもとに、統計が示す実態と、辞める理由として語られる内容の根拠を整理。続けるか転職かを判断するための視点も中立的にまとめます。 宅配ドライバー 辞めたい理由, 宅配ドライバー 離職率, 配送ドライバー 転職, 物流 2024年問題">
       <a class="article-card" href="articles/takuhai-driver-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>宅配ドライバーは本当に「辞める人が多い」のか?統計で見る離職率と離職理由の実態</h2>
         <p>宅配ドライバーの離職率は本当に高いのか。厚労省の雇用動向調査や国交省の公表データをもとに、統計が示す実態と、辞める理由として語られる内容の根拠を整理。続けるか転職かを判断するための視点も中立的にまとめます。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="一般事務はなぜ辞める人が多いのか?離職理由と実態を統計から整理 一般事務を辞めたいと感じる理由を、厚生労働省の雇用動向調査や民間アンケートなどのデータから整理。単調さ・評価のされにくさ・aiへの不安の実態と、データで言えること/言えないことを切り分けつつ、続けるか動くかの判断材料をまとめました。 一般事務 辞めたい理由, 事務職 離職率, 一般事務 転職, 事務職 将来性">
       <a class="article-card" href="articles/ippan-jimu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>一般事務はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>一般事務を辞めたいと感じる理由を、厚生労働省の雇用動向調査や民間アンケートなどのデータから整理。単調さ・評価のされにくさ・AIへの不安の実態と、データで言えること/言えないことを切り分けつつ、続けるか動くかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="消防士の離職理由とは?「辞めたい」の背景と実態を公的統計から整理 消防士の離職について、消防白書・総務省「地方公務員の退職状況等調査」・厚労省「雇用動向調査」などの公的データをもとに整理。勤務形態、身体的負担、惨事ストレス、組織風土などの背景と、続ける/転職を考える際の判断材料をまとめました。 消防士 辞めたい理由, 消防士 離職率, 消防士 転職, 消防士 退職 理由">
       <a class="article-card" href="articles/shouboushi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>消防士の離職理由とは?「辞めたい」の背景と実態を公的統計から整理</h2>
         <p>消防士の離職について、消防白書・総務省「地方公務員の退職状況等調査」・厚労省「雇用動向調査」などの公的データをもとに整理。勤務形態、身体的負担、惨事ストレス、組織風土などの背景と、続ける/転職を考える際の判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="塾講師はなぜ辞める人が多いのか?離職率と5つの理由を統計から整理 塾講師の離職率は本当に高いのか。厚生労働省の新規学卒就職者の離職状況・雇用動向調査などの公的統計をもとに、勤務時間帯・授業外業務・役割の変化など5つの離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。 塾講師 辞めたい理由, 塾講師 離職率, 塾講師 転職, 教育業界 離職率">
       <a class="article-card" href="articles/juku-koushi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>塾講師はなぜ辞める人が多いのか?離職率と5つの理由を統計から整理</h2>
         <p>塾講師の離職率は本当に高いのか。厚生労働省の新規学卒就職者の離職状況・雇用動向調査などの公的統計をもとに、勤務時間帯・授業外業務・役割の変化など5つの離職理由を整理し、続ける/転職を考える際の判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="美容師はなぜ辞める人が多いのか?離職理由と実態を統計から整理 美容師の離職率は実際どのくらいか。厚生労働省の統計とホットペッパービューティーアカデミーの実態調査をもとに、給与・拘束時間・下積み・人間関係などの離職理由を年次に注意しながら整理し、続けるか動くかの判断材料をまとめました。 美容師 辞めたい, 美容師 離職率, 美容師 辞める理由, 美容師 転職">
       <a class="article-card" href="articles/biyoushi-yameru-riyuu-tokei.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>美容師はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>美容師の離職率は実際どのくらいか。厚生労働省の統計とホットペッパービューティーアカデミーの実態調査をもとに、給与・拘束時間・下積み・人間関係などの離職理由を年次に注意しながら整理し、続けるか動くかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="訪問薬剤師が「辞めたい」と感じる理由7つ｜離職率・勤続年数の統計から実態を整理 訪問薬剤師(在宅対応薬剤師)の離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や業界アンケートをもとに整理。オンコールや記録業務などの負担と、「続ける・変える」の判断材料をまとめました。 訪問薬剤師 辞めたい, 在宅 薬剤師 離職率, 薬剤師 離職理由, 在宅医療 薬剤師 転職">
       <a class="article-card" href="articles/houmon-yakuzaishi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>訪問薬剤師が「辞めたい」と感じる理由7つ｜離職率・勤続年数の統計から実態を整理</h2>
         <p>訪問薬剤師(在宅対応薬剤師)の離職理由を、厚生労働省の雇用動向調査・賃金構造基本統計調査や業界アンケートをもとに整理。オンコールや記録業務などの負担と、「続ける・変える」の判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="訪問看護師の離職率は本当に高い?辞める理由と実態を統計から整理 訪問看護師の離職率は本当に高いのか、辞める理由として何が語られているのかを、厚労省の雇用動向調査や日本看護協会の実態調査などの統計をもとに整理。オンコールや一人訪問の責任など8つのテーマと、続けるか転職かの判断材料もまとめました。 訪問看護師 辞める理由, 訪問看護 離職率, 訪問看護師 辞めたい, 訪問看護 きつい">
       <a class="article-card" href="articles/houmon-kangoshi-rishoku-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>訪問看護師の離職率は本当に高い?辞める理由と実態を統計から整理</h2>
         <p>訪問看護師の離職率は本当に高いのか、辞める理由として何が語られているのかを、厚労省の雇用動向調査や日本看護協会の実態調査などの統計をもとに整理。オンコールや一人訪問の責任など8つのテーマと、続けるか転職かの判断材料もまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="美容看護師はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理 美容看護師の離職理由を、公的統計と業界の発信を切り分けて整理しました。「離職率が高い」と言われる根拠の確かさ、売上目標・教育体制・キャリア不安といった辞めたい理由、続けるか転職かを判断する材料までまとめます。 美容看護師 辞めたい, 美容看護師 離職率, 美容クリニック 看護師 退職理由, 美容看護師 転職">
       <a class="article-card" href="articles/biyou-kangoshi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>美容看護師はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理</h2>
         <p>美容看護師の離職理由を、公的統計と業界の発信を切り分けて整理しました。「離職率が高い」と言われる根拠の確かさ、売上目標・教育体制・キャリア不安といった辞めたい理由、続けるか転職かを判断する材料までまとめます。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="クリニック看護師が「辞めたい」と感じる理由は?統計で分かること・分からないこと クリニック看護師の「辞めたい」の背景を、日本看護協会・厚生労働省の統計で確かめられる範囲と、統計では確かめられない職場構造の話に分けて整理。続けるか動くかの判断材料までまとめます。 クリニック看護師 辞めたい, クリニック看護師 離職理由, 看護師 離職率, クリニック看護師 転職">
       <a class="article-card" href="articles/clinic-kangoshi-yametai-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>クリニック看護師が「辞めたい」と感じる理由は?統計で分かること・分からないこと</h2>
         <p>クリニック看護師の「辞めたい」の背景を、日本看護協会・厚生労働省の統計で確かめられる範囲と、統計では確かめられない職場構造の話に分けて整理。続けるか動くかの判断材料までまとめます。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="病院看護師はなぜ辞める人が多いのか?離職率11.0%の実態と主な離職理由を統計から整理 病院で働く正規雇用看護職員の離職率は2024年度で11.0%(日本看護協会調査)。統計ごとに定義が異なるため単純比較はできませんが、夜勤負担やメンタル不調など調査で繰り返し挙がる論点を整理し、続けるか動くかの判断材料をまとめます。 看護師 辞めたい 理由, 看護師 離職率, 病院看護師 退職理由, 看護師 転職 判断">
       <a class="article-card" href="articles/byoin-kangoshi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月15日</div>
         <h2>病院看護師はなぜ辞める人が多いのか?離職率11.0%の実態と主な離職理由を統計から整理</h2>
         <p>病院で働く正規雇用看護職員の離職率は2024年度で11.0%(日本看護協会調査)。統計ごとに定義が異なるため単純比較はできませんが、夜勤負担やメンタル不調など調査で繰り返し挙がる論点を整理し、続けるか動くかの判断材料をまとめます。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="ses・客先常駐エンジニアは本当に「辞める人が多い」のか?——統計と業界構造から整理 ses・客先常駐エンジニアの離職実態を、厚生労働省の雇用動向調査やdodaの転職理由ランキング、ipa「dx動向2026」などをもとに検証。離職につながりやすい5つの構造的要因と、続けるか転職するかを切り分ける視点を整理します。 ses 辞めたい, 客先常駐 辞めたい理由, sesエンジニア 離職率, 客先常駐 転職">
       <a class="article-card" href="articles/ses-kyakusaki-jouchuu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>SES・客先常駐エンジニアは本当に「辞める人が多い」のか?——統計と業界構造から整理</h2>
         <p>SES・客先常駐エンジニアの離職実態を、厚生労働省の雇用動向調査やdodaの転職理由ランキング、IPA「DX動向2026」などをもとに検証。離職につながりやすい5つの構造的要因と、続けるか転職するかを切り分ける視点を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="総務を「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理 総務を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査やバックオフィスの実態調査をもとに、総務の離職理由と背景、そして評価されていると感じる層のデータも含めて整理し、続けるか転職するかの判断材料をまとめました。 総務 辞めたい, 総務 離職理由, 総務 転職, 総務 仕事 つらい">
       <a class="article-card" href="articles/soumu-yametai-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>総務を「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理</h2>
         <p>総務を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査やバックオフィスの実態調査をもとに、総務の離職理由と背景、そして評価されていると感じる層のデータも含めて整理し、続けるか転職するかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="地方公務員の離職理由を統計から整理|若手の離職はなぜ増えているのか 地方公務員全体の離職率は民間より低い一方、30歳未満の普通退職者は増加傾向にあります。総務省の退職状況等調査、カスハラ実態調査、地方公務員安全衛生推進協会の健康状況調査などの公的データをもとに、若手を中心とした離職理由と、辞める前に整理したい判断材料をまとめました。 地方公務員 辞めたい, 地方公務員 離職率, 公務員 退職理由, 地方公務員 転職">
       <a class="article-card" href="articles/chihou-koumuin-rishoku-riyuu-toukei.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>地方公務員の離職理由を統計から整理|若手の離職はなぜ増えているのか</h2>
         <p>地方公務員全体の離職率は民間より低い一方、30歳未満の普通退職者は増加傾向にあります。総務省の退職状況等調査、カスハラ実態調査、地方公務員安全衛生推進協会の健康状況調査などの公的データをもとに、若手を中心とした離職理由と、辞める前に整理したい判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="幼稚園教諭が「辞めたい」と感じる理由とは?離職の実態と退職理由を公的統計から整理 幼稚園教諭の離職の実態と退職理由を、文部科学省「学校教員統計調査」や東京都の保育者実態調査など公的データから整理。給与・業務量・人間関係・ライフイベントの位置づけと、続けるか環境を変えるかを考える判断材料をまとめました。 幼稚園教諭 辞めたい理由, 幼稚園教諭 離職率, 幼稚園教諭 退職理由, 幼稚園教諭 転職">
       <a class="article-card" href="articles/youchien-kyouyu-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>幼稚園教諭が「辞めたい」と感じる理由とは?離職の実態と退職理由を公的統計から整理</h2>
         <p>幼稚園教諭の離職の実態と退職理由を、文部科学省「学校教員統計調査」や東京都の保育者実態調査など公的データから整理。給与・業務量・人間関係・ライフイベントの位置づけと、続けるか環境を変えるかを考える判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="建設作業員の離職率は本当に高い?データで見る離職理由と実態の整理 建設作業員は辞める人が多いのか。厚生労働省の雇用動向調査や国土交通省の資料をもとに、離職率の実態・労働時間・収入形態・安全面などを年次を明示して整理し、続けるか転職かの判断材料をまとめました。 建設作業員 辞めたい理由, 建設業 離職率, 建設作業員 転職, 建設業 若者離れ">
       <a class="article-card" href="articles/kensetsu-sagyouin-rishoku-riyuu-data.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>建設作業員の離職率は本当に高い?データで見る離職理由と実態の整理</h2>
         <p>建設作業員は辞める人が多いのか。厚生労働省の雇用動向調査や国土交通省の資料をもとに、離職率の実態・労働時間・収入形態・安全面などを年次を明示して整理し、続けるか転職かの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="警察官はなぜ辞める人が多いと言われるのか?離職の実態と理由を統計から整理 警察官の離職は本当に多いのか。総務省・厚生労働省の統計や報道をもとに、退職が若手に偏る傾向、勤務形態・組織文化・私生活の制約といった離職理由を整理し、続けるか転職かを考える判断材料をまとめました。 警察官 辞めたい 理由, 警察官 離職率, 警察官 退職 実態, 警察官 転職">
       <a class="article-card" href="articles/keisatsukan-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>警察官はなぜ辞める人が多いと言われるのか?離職の実態と理由を統計から整理</h2>
         <p>警察官の離職は本当に多いのか。総務省・厚生労働省の統計や報道をもとに、退職が若手に偏る傾向、勤務形態・組織文化・私生活の制約といった離職理由を整理し、続けるか転職かを考える判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="人事が「辞めたい」と感じやすいと言われる背景を、統計と実務から整理する 人事の仕事を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査・労働安全衛生調査などの公的統計と実務解説をもとに、人事職に生じやすい負荷を整理。続けるか転職かを切り分けるための判断材料も紹介します。 人事 辞めたい,人事 離職理由,人事 転職,人事 きつい">
       <a class="article-card" href="articles/jinji-yametai-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>人事が「辞めたい」と感じやすいと言われる背景を、統計と実務から整理する</h2>
         <p>人事の仕事を辞めたいと感じる人は少なくありません。厚生労働省の雇用動向調査・労働安全衛生調査などの公的統計と実務解説をもとに、人事職に生じやすい負荷を整理。続けるか転職かを切り分けるための判断材料も紹介します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="編集者はなぜ「辞める人が多い」と言われるのか?公的統計と業界データで実態を整理 編集者の離職はなぜ語られやすいのか。厚生労働省の雇用動向調査・賃金構造基本統計調査や出版市場データをもとに、離職率の実像と「辞めたい」と感じやすい6つの論点、続けるか転職するかの判断材料を整理します。 編集者 辞めたい, 編集者 離職率, 編集者 転職, 出版業界 離職率">
       <a class="article-card" href="articles/henshusha-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>編集者はなぜ「辞める人が多い」と言われるのか?公的統計と業界データで実態を整理</h2>
         <p>編集者の離職はなぜ語られやすいのか。厚生労働省の雇用動向調査・賃金構造基本統計調査や出版市場データをもとに、離職率の実像と「辞めたい」と感じやすい6つの論点、続けるか転職するかの判断材料を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="税理士はなぜ「辞める人が多い」と言われるのか?離職理由7つと会計事務所の実態を統計から整理 税理士・会計事務所職員の離職について、厚生労働省の雇用動向調査・賃金構造基本統計調査、日本税理士会連合会の第7回税理士実態調査などをもとに整理。繁忙期、試験との両立、処遇など7つの要因と、辞める前に確認したい判断材料をまとめました。 税理士 辞めたい, 会計事務所 離職率, 税理士 離職理由, 税理士 転職">
       <a class="article-card" href="articles/zeirishi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>税理士はなぜ「辞める人が多い」と言われるのか?離職理由7つと会計事務所の実態を統計から整理</h2>
         <p>税理士・会計事務所職員の離職について、厚生労働省の雇用動向調査・賃金構造基本統計調査、日本税理士会連合会の第7回税理士実態調査などをもとに整理。繁忙期、試験との両立、処遇など7つの要因と、辞める前に確認したい判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="弁護士を辞めたいと感じる理由とは?離職・転身の実態を公的統計から整理 弁護士が「辞めたい」と感じる背景を、日弁連の弁護士白書・経済的基盤実態調査やjilaの統計から整理。労働時間や収入のばらつき、登録取消しの実態、事務所内で変えられること、転職を検討する際の比較軸までを解説します。 弁護士 辞めたい 理由, 弁護士 離職率, 弁護士 廃業 統計, 弁護士 転職">
       <a class="article-card" href="articles/bengoshi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>弁護士を辞めたいと感じる理由とは?離職・転身の実態を公的統計から整理</h2>
         <p>弁護士が「辞めたい」と感じる背景を、日弁連の弁護士白書・経済的基盤実態調査やJILAの統計から整理。労働時間や収入のばらつき、登録取消しの実態、事務所内で変えられること、転職を検討する際の比較軸までを解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="期間工はなぜ「辞める人が多い」と言われるのか｜離職理由と実態を統計から整理 期間工・工場作業員の離職率は本当に高いのか。厚生労働省の雇用動向調査など公的データをもとに、契約満了・交替勤務・身体的負担といった離職理由を分類し、続けるか動くかの判断材料を整理します。 期間工 辞める理由, 期間工 離職率, 工場作業員 辞めたい, 期間工 実態">
       <a class="article-card" href="articles/kikanko-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>期間工はなぜ「辞める人が多い」と言われるのか｜離職理由と実態を統計から整理</h2>
         <p>期間工・工場作業員の離職率は本当に高いのか。厚生労働省の雇用動向調査など公的データをもとに、契約満了・交替勤務・身体的負担といった離職理由を分類し、続けるか動くかの判断材料を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="creative_senmon">
+    </div><div class="article-card-wrap" data-category="creative_senmon" data-search="webデザイナーはなぜ辞める人が多いと言われるのか?離職率と離職理由を統計から整理 webデザイナーの離職率は本当に高いのか、厚生労働省の雇用動向調査や民間調査をもとに整理。収入・労働時間・評価・aiなど辞めたい理由の傾向と、根拠の強さの違い、続けるか転職するかを判断する視点をまとめました。 webデザイナー 辞めたい, webデザイナー 離職率, webデザイナー 辞める理由, webデザイナー 転職">
       <a class="article-card" href="articles/web-designer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>Webデザイナーはなぜ辞める人が多いと言われるのか?離職率と離職理由を統計から整理</h2>
         <p>Webデザイナーの離職率は本当に高いのか、厚生労働省の雇用動向調査や民間調査をもとに整理。収入・労働時間・評価・AIなど辞めたい理由の傾向と、根拠の強さの違い、続けるか転職するかを判断する視点をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="jimu_kanri">
+    </div><div class="article-card-wrap" data-category="jimu_kanri" data-search="経理を辞めたい人が多いのはなぜ？離職理由と実態を統計・調査から整理 経理職の離職理由を、厚生労働省の雇用動向調査や民間の経理職アンケートをもとに整理。ミスが許されない緊張感、繁忙期の偏り、一人経理、キャリアの見通しなど背景を解説し、続けるか転職かの判断材料を示します。 経理 辞めたい 理由, 経理 離職率, 経理 辞める人が多い, 経理 転職">
       <a class="article-card" href="articles/keiri-yameru-riyuu-toukei.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>経理を辞めたい人が多いのはなぜ？離職理由と実態を統計・調査から整理</h2>
         <p>経理職の離職理由を、厚生労働省の雇用動向調査や民間の経理職アンケートをもとに整理。ミスが許されない緊張感、繁忙期の偏り、一人経理、キャリアの見通しなど背景を解説し、続けるか転職かの判断材料を示します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="小学校教師はなぜ辞める人が多いのか?離職理由と実態を統計から整理 小学校教師の休職・離職の実態を、文部科学省や厚生労働省の公的統計から整理。長時間労働・保護者対応・処遇など「辞めたい」と感じる理由を5つに分類し、続けるか転職かを考えるための判断材料をまとめました。 小学校教師 辞めたい理由, 小学校教員 離職率, 教員 辞める理由, 教師 転職">
       <a class="article-card" href="articles/shougakkou-kyoushi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>小学校教師はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>小学校教師の休職・離職の実態を、文部科学省や厚生労働省の公的統計から整理。長時間労働・保護者対応・処遇など「辞めたい」と感じる理由を5つに分類し、続けるか転職かを考えるための判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="インフラエンジニアはなぜ「辞めたい」と語られるのか?離職理由と実態を統計から整理 インフラエンジニアの離職理由を、厚生労働省の雇用動向調査など公的統計を中心に整理。夜勤・障害対応・評価されにくさなど7つの背景と、辞める前に確かめたい判断軸、転職先の選択肢を、データの時点や出典の限界も明示して解説します。 インフラエンジニア 辞めたい, インフラエンジニア 離職率, インフラエンジニア きつい 理由, インフラエンジニア 転職">
       <a class="article-card" href="articles/infra-engineer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>インフラエンジニアはなぜ「辞めたい」と語られるのか?離職理由と実態を統計から整理</h2>
         <p>インフラエンジニアの離職理由を、厚生労働省の雇用動向調査など公的統計を中心に整理。夜勤・障害対応・評価されにくさなど7つの背景と、辞める前に確かめたい判断軸、転職先の選択肢を、データの時点や出典の限界も明示して解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="フロントエンドエンジニアはなぜ辞める人が多いのか?離職理由と実態を統計から整理 フロントエンドエンジニアの離職理由を、厚生労働省「令和6年雇用動向調査」など公的統計と各種調査から整理。情報通信業の離職率12.4%は全産業平均14.2%を下回る一方、技術変化や評価のされにくさなど職種特有の悩みも。続ける/転職を判断する材料までまとめました。 フロントエンドエンジニア 辞めたい, フロントエンドエンジニア 離職率, フロントエンドエンジニア つらい, フロントエンドエンジニア 転職">
       <a class="article-card" href="articles/frontend-engineer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>フロントエンドエンジニアはなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>フロントエンドエンジニアの離職理由を、厚生労働省「令和6年雇用動向調査」など公的統計と各種調査から整理。情報通信業の離職率12.4%は全産業平均14.2%を下回る一方、技術変化や評価のされにくさなど職種特有の悩みも。続ける/転職を判断する材料までまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="派遣薬剤師は「辞める人が多い」と言われるのはなぜか｜離職理由と実態を統計から整理 派遣薬剤師の離職が多く見えるのはなぜか。厚生労働省の雇用動向調査・派遣労働者実態調査や薬剤師需給推計をもとに、有期契約や3年ルールといった制度上の区切り、収入・キャリアの課題を整理し、続けるか転職かの判断材料をまとめました。 派遣薬剤師 辞めたい, 派遣薬剤師 離職理由, 派遣薬剤師 実態, 薬剤師 離職率">
       <a class="article-card" href="articles/haken-yakuzaishi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>派遣薬剤師は「辞める人が多い」と言われるのはなぜか｜離職理由と実態を統計から整理</h2>
         <p>派遣薬剤師の離職が多く見えるのはなぜか。厚生労働省の雇用動向調査・派遣労働者実態調査や薬剤師需給推計をもとに、有期契約や3年ルールといった制度上の区切り、収入・キャリアの課題を整理し、続けるか転職かの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="ドラッグストア薬剤師はなぜ辞める人が多いのか?離職理由と実態を統計から整理 ドラッグストア薬剤師の離職理由を、厚生労働省の雇用動向調査や薬剤師を対象とした民間調査から整理。給与・勤務時間・業務範囲など「辞めたい」につながりやすい構造と、続ける人の視点、判断材料をまとめました。 ドラッグストア薬剤師 辞めたい, ドラッグストア薬剤師 離職理由, 薬剤師 離職率, ドラッグストア薬剤師 きつい">
       <a class="article-card" href="articles/drugstore-yakuzaishi-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>ドラッグストア薬剤師はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>ドラッグストア薬剤師の離職理由を、厚生労働省の雇用動向調査や薬剤師を対象とした民間調査から整理。給与・勤務時間・業務範囲など「辞めたい」につながりやすい構造と、続ける人の視点、判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="薬局薬剤師(調剤薬局薬剤師)が「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理 調剤薬局の薬剤師が「辞めたい」と感じる背景を、厚生労働省の雇用動向調査・賃金構造基本統計調査・需給推計などの公的データから整理。年収カーブ、少人数職場、対人業務への転換、業界再編の影響と、続けるか転職かの判断材料を解説します。 薬剤師 辞めたい理由, 調剤薬局 薬剤師 離職率, 薬剤師 転職理由, 薬局薬剤師 実態">
       <a class="article-card" href="articles/yakkyoku-yakuzaishi-yametai-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>薬局薬剤師(調剤薬局薬剤師)が「辞めたい」と感じるのはなぜか?離職理由と実態を統計から整理</h2>
         <p>調剤薬局の薬剤師が「辞めたい」と感じる背景を、厚生労働省の雇用動向調査・賃金構造基本統計調査・需給推計などの公的データから整理。年収カーブ、少人数職場、対人業務への転換、業界再編の影響と、続けるか転職かの判断材料を解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="病院薬剤師は本当に「辞める人が多い」のか?離職率データと語られる理由を統計から整理 病院薬剤師の離職率は本当に高いのか。厚労省の雇用動向調査や薬剤師確保に関する調査をもとに、データで言えること・言えないことを切り分け、現場で語られる離職理由を整理。続けるか転職かを判断する材料も解説します。 病院薬剤師 辞めたい理由, 病院薬剤師 離職率, 薬剤師 退職理由, 病院薬剤師 転職">
       <a class="article-card" href="articles/byoin-yakuzaishi-rishoku-riyuu-toukei.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>病院薬剤師は本当に「辞める人が多い」のか?離職率データと語られる理由を統計から整理</h2>
         <p>病院薬剤師の離職率は本当に高いのか。厚労省の雇用動向調査や薬剤師確保に関する調査をもとに、データで言えること・言えないことを切り分け、現場で語られる離職理由を整理。続けるか転職かを判断する材料も解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="mr(医薬品営業)を辞めたい人が多いのはなぜ?離職理由と業界の実態を統計から整理 mrの離職が語られる背景を、mr白書や厚生労働省の雇用動向調査などのデータから整理。転勤・数字・将来不安といった理由の構造と、続けるか転職を考えるかの判断材料をまとめました。 mr 辞めたい理由, mr 離職率, mr 転職, 医薬品営業 離職">
       <a class="article-card" href="articles/mr-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>MR(医薬品営業)を辞めたい人が多いのはなぜ?離職理由と業界の実態を統計から整理</h2>
         <p>MRの離職が語られる背景を、MR白書や厚生労働省の雇用動向調査などのデータから整理。転勤・数字・将来不安といった理由の構造と、続けるか転職を考えるかの判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="保険営業はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理 保険営業の離職率は本当に高いのか。厚労省の雇用動向調査や生命保険協会の統計、報道データをもとに、辞める人が多いと言われる背景と主な離職理由、続ける・動くを判断する視点を客観的に整理します。 保険営業 辞めたい理由, 保険営業 離職率, 生保レディ 辞めたい, 保険営業 転職">
       <a class="article-card" href="articles/hoken-eigyou-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>保険営業はなぜ「辞める人が多い」と言われるのか?離職理由と実態を統計から整理</h2>
         <p>保険営業の離職率は本当に高いのか。厚労省の雇用動向調査や生命保険協会の統計、報道データをもとに、辞める人が多いと言われる背景と主な離職理由、続ける・動くを判断する視点を客観的に整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="不動産営業はなぜ辞める人が多いのか?離職理由と実態を統計から整理 不動産営業の離職率は本当に高いのか。厚生労働省の雇用動向調査や新規学卒者の離職状況をもとに、統計の読み方と辞めたい理由6つを整理。業態ごとの違いや、続けるか転職するかの判断材料もまとめます。 不動産営業 辞めたい理由, 不動産業界 離職率, 不動産営業 きつい 実態, 不動産営業 転職">
       <a class="article-card" href="articles/fudosan-eigyo-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>不動産営業はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>不動産営業の離職率は本当に高いのか。厚生労働省の雇用動向調査や新規学卒者の離職状況をもとに、統計の読み方と辞めたい理由6つを整理。業態ごとの違いや、続けるか転職するかの判断材料もまとめます。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="個人営業を「辞めたい」と感じる人がいるのはなぜか?離職理由と実態を統計から整理 個人向け営業(btoc営業)で「辞めたい」と感じる人がいるのはなぜか。厚生労働省の雇用動向調査・新規学卒就職者の離職状況をもとに、統計で言えること/言えないことを切り分けながら、離職理由の傾向と判断の整理軸を編集部が中立的にまとめました。 個人営業 辞めたい, 個人営業 離職率, 個人営業 きつい, 営業職 離職理由">
       <a class="article-card" href="articles/kojin-eigyou-yametai-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>個人営業を「辞めたい」と感じる人がいるのはなぜか?離職理由と実態を統計から整理</h2>
         <p>個人向け営業(BtoC営業)で「辞めたい」と感じる人がいるのはなぜか。厚生労働省の雇用動向調査・新規学卒就職者の離職状況をもとに、統計で言えること/言えないことを切り分けながら、離職理由の傾向と判断の整理軸を編集部が中立的にまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="法人営業は本当に「辞める人が多い」のか｜語られる離職理由を統計から検証する 法人営業(btob営業)は辞める人が多いと語られがちですが、実態はどうなのか。厚生労働省の雇用動向調査など公的統計と民間調査を確認しつつ、よく挙がる離職理由8つ、続ける/動くの切り分け方、キャリアの選択肢を整理します。 法人営業 辞めたい, 法人営業 離職率, btob営業 きつい, 法人営業 転職">
       <a class="article-card" href="articles/houjin-eigyou-yameru-riyuu.html">
         <div class="article-card-date">2026年9月14日</div>
         <h2>法人営業は本当に「辞める人が多い」のか｜語られる離職理由を統計から検証する</h2>
         <p>法人営業(BtoB営業)は辞める人が多いと語られがちですが、実態はどうなのか。厚生労働省の雇用動向調査など公的統計と民間調査を確認しつつ、よく挙がる離職理由8つ、続ける/動くの切り分け方、キャリアの選択肢を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="seizou_kensetsu">
+    </div><div class="article-card-wrap" data-category="seizou_kensetsu" data-search="トラック運転手は本当に「辞める人が多い」のか?離職理由と実態を統計から整理【2026年版】 トラック運転手の離職理由を、厚労省の雇用動向調査や国交省の実態調査など公的データから整理。離職率の実際、労働時間・賃金・荷待ちなど6つの理由、2024年問題以降の変化、辞める前に確認したい判断軸まで解説します。 トラック運転手 辞めたい理由, トラック運転手 離職率, ドライバー 転職, 物流 2024年問題">
       <a class="article-card" href="articles/truck-driver-yameru-riyuu-toukei.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>トラック運転手は本当に「辞める人が多い」のか?離職理由と実態を統計から整理【2026年版】</h2>
         <p>トラック運転手の離職理由を、厚労省の雇用動向調査や国交省の実態調査など公的データから整理。離職率の実際、労働時間・賃金・荷待ちなど6つの理由、2024年問題以降の変化、辞める前に確認したい判断軸まで解説します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="kyouiku_hoiku">
+    </div><div class="article-card-wrap" data-category="kyouiku_hoiku" data-search="保育士の離職率は本当に高い?統計で見る「辞めたい理由」の実態 保育士の離職率は本当に高いのか。厚生労働省の統計や東京都の実態調査をもとに、離職率の実数、辞めたい理由の上位項目、データの限界までを整理。「続ける」「動く」を判断するための材料をまとめました。 保育士 辞めたい理由, 保育士 離職率, 保育士 退職理由, 保育士 転職">
       <a class="article-card" href="articles/hoikushi-rishokuritsu-riyuu-toukei.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>保育士の離職率は本当に高い?統計で見る「辞めたい理由」の実態</h2>
         <p>保育士の離職率は本当に高いのか。厚生労働省の統計や東京都の実態調査をもとに、離職率の実数、辞めたい理由の上位項目、データの限界までを整理。「続ける」「動く」を判断するための材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="it_engineer">
+    </div><div class="article-card-wrap" data-category="it_engineer" data-search="itエンジニアはなぜ「辞める人が多い」と言われるのか｜統計で見る離職の実態と、語られやすい6つの理由 itエンジニアの離職率は本当に高いのか。厚生労働省「令和6年雇用動向調査」などの公的統計で情報通信業の数字を確認しつつ、統計と職種のズレにも注意しながら、給与・評価、多重下請け構造、学習コストなど「辞めたい」と語られやすい理由を整理します。 itエンジニア 辞めたい理由, itエンジニア 離職率, 情報通信業 離職率, エンジニア 転職理由">
       <a class="article-card" href="articles/it-engineer-yameru-riyuu.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>ITエンジニアはなぜ「辞める人が多い」と言われるのか｜統計で見る離職の実態と、語られやすい6つの理由</h2>
         <p>ITエンジニアの離職率は本当に高いのか。厚生労働省「令和6年雇用動向調査」などの公的統計で情報通信業の数字を確認しつつ、統計と職種のズレにも注意しながら、給与・評価、多重下請け構造、学習コストなど「辞めたい」と語られやすい理由を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="iryou_kaigo">
+    </div><div class="article-card-wrap" data-category="iryou_kaigo" data-search="介護士はなぜ辞める人が多いのか?離職理由と実態を統計から整理 介護職の離職率は本当に高いのか。介護労働安定センターや厚生労働省の公的統計をもとに、離職率の推移・辞める理由の上位・賃金や人手不足の背景を、比較の限界にも触れながら整理。続けるか転職するかを考える判断材料をまとめました。 介護士 辞めたい理由, 介護職 離職率, 介護 退職理由, 介護士 転職">
       <a class="article-card" href="articles/kaigoshi-yameru-riyuu-toukei.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>介護士はなぜ辞める人が多いのか?離職理由と実態を統計から整理</h2>
         <p>介護職の離職率は本当に高いのか。介護労働安定センターや厚生労働省の公的統計をもとに、離職率の推移・辞める理由の上位・賃金や人手不足の背景を、比較の限界にも触れながら整理。続けるか転職するかを考える判断材料をまとめました。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="koumuin">
+    </div><div class="article-card-wrap" data-category="koumuin" data-search="公務員はなぜ辞める人が多いのか|離職の実態と退職理由を公的統計から整理 公務員の離職率は民間より低いのに「若手の退職が増えた」と言われるのはなぜか。総務省・人事院・内閣人事局の公的統計をもとに、公務員の退職理由と実態、続けるか転職かを考える判断材料を整理します。 公務員 辞めたい理由, 公務員 離職率, 公務員 退職理由, 公務員 転職">
       <a class="article-card" href="articles/koumuin-yameru-riyuu-toukei.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>公務員はなぜ辞める人が多いのか|離職の実態と退職理由を公的統計から整理</h2>
         <p>公務員の離職率は民間より低いのに「若手の退職が増えた」と言われるのはなぜか。総務省・人事院・内閣人事局の公的統計をもとに、公務員の退職理由と実態、続けるか転職かを考える判断材料を整理します。</p>
       </a>
-    </div><div class="article-card-wrap" data-category="eigyo_hanbai">
+    </div><div class="article-card-wrap" data-category="eigyo_hanbai" data-search="営業職はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理 営業職の離職はなぜ話題になりやすいのか。厚生労働省の雇用動向調査や民間アンケートをもとに、公的統計で分かること・分からないことを切り分けながら、「辞めたい」と感じる理由の傾向と判断材料の整理の仕方をまとめました。 営業 辞めたい 理由, 営業職 離職率, 営業 退職理由, 営業職 転職">
       <a class="article-card" href="articles/eigyou-yameru-riyuu.html">
         <div class="article-card-date">2026年9月13日</div>
         <h2>営業職はなぜ辞める人が多いと言われるのか?離職理由と実態を統計から整理</h2>
         <p>営業職の離職はなぜ話題になりやすいのか。厚生労働省の雇用動向調査や民間アンケートをもとに、公的統計で分かること・分からないことを切り分けながら、「辞めたい」と感じる理由の傾向と判断材料の整理の仕方をまとめました。</p>
       </a>
     </div></div>
+  <p id="article-list-empty" class="empty-state" hidden>条件に合う職業が見つかりませんでした。別のキーワードやカテゴリで探してみてください。</p>
 </main>
 
 <footer class="site-footer">
@@ -473,17 +488,37 @@
 (function() {
   var tabs = document.querySelectorAll(".category-tab");
   var cards = document.querySelectorAll(".article-card-wrap");
+  var searchInput = document.getElementById("article-search-input");
+  var emptyEl = document.getElementById("article-list-empty");
+  var currentCategory = "all";
+  var currentQuery = "";
+  function applyFilter() {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var matchesCategory = currentCategory === "all" || card.getAttribute("data-category") === currentCategory;
+      var matchesQuery = currentQuery === "" || card.getAttribute("data-search").indexOf(currentQuery) !== -1;
+      card.hidden = !(matchesCategory && matchesQuery);
+      if (!card.hidden) visible++;
+    });
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+  }
   tabs.forEach(function(tab) {
     tab.addEventListener("click", function(e) {
       e.preventDefault();
-      tabs.forEach(function(t) { t.classList.remove("is-active"); });
-      tab.classList.add("is-active");
-      var cat = tab.getAttribute("data-category");
-      cards.forEach(function(card) {
-        card.hidden = cat !== "all" && card.getAttribute("data-category") !== cat;
+      tabs.forEach(function(t) {
+        t.classList.toggle("is-active", t === tab);
+        t.setAttribute("aria-selected", t === tab ? "true" : "false");
       });
+      currentCategory = tab.getAttribute("data-category");
+      applyFilter();
     });
   });
+  if (searchInput) {
+    searchInput.addEventListener("input", function() {
+      currentQuery = searchInput.value.trim().toLowerCase();
+      applyFilter();
+    });
+  }
 })();
 </script>
 

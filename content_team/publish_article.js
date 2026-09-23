@@ -150,6 +150,39 @@ function categoryLabel(key) {
   return found ? found.label : CATEGORIES[0].label;
 }
 
+// 全ページ共通の<head>要素(SNS共有画像・ファビコン・テーマカラー)。
+// rootはそのページからdocs直下への相対パス(トップは""、記事・カテゴリページは"../")。
+function commonHeadHtml(root) {
+  const ogImage = `${site.baseUrl}/ogp.png`;
+  return `<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${ogImage}">
+${site.twitterHandle ? `<meta name="twitter:site" content="${escapeHtml(site.twitterHandle)}">\n` : ""}<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a2224" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="${root}favicon-32.png">
+<link rel="apple-touch-icon" href="${root}apple-touch-icon.png">`;
+}
+
+// 本文のh2に目次用のidを振り、h2が3つ以上ある記事には最初のh2の直前(リード文の後)に目次を入れる。
+function addTableOfContents(bodyHtml) {
+  const headings = [];
+  const html = bodyHtml.replace(/<h2>(.*?)<\/h2>/g, (match, inner) => {
+    const id = `sec-${headings.length + 1}`;
+    headings.push({ id, text: inner.replace(/<[^>]+>/g, "") });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  if (headings.length < 3) return html;
+  const toc = `<nav class="toc" aria-label="目次">
+        <p class="toc-title">目次</p>
+        <ol>${headings.map((h) => `<li><a href="#${h.id}">${h.text}</a></li>`).join("")}</ol>
+      </nav>
+      `;
+  return html.replace('<h2 id="sec-1">', `${toc}<h2 id="sec-1">`);
+}
+
 // SEO・回遊性のため、同カテゴリ(=職種の近さ)の記事を優先してリンクする。
 // 同カテゴリだけで3件に満たない場合は他カテゴリの記事で埋める。
 function relatedArticlesHtml(current, allArticles) {
@@ -157,15 +190,15 @@ function relatedArticlesHtml(current, allArticles) {
   const rest = allArticles.filter((a) => a.slug !== current.slug);
   const sameCategory = rest.filter((a) => (a.category || inferCategory(a)) === currentCategory);
   const others = rest.filter((a) => (a.category || inferCategory(a)) !== currentCategory);
-  const picked = [...sameCategory, ...others].slice(0, 3);
+  const picked = [...sameCategory, ...others].slice(0, 4);
   if (picked.length === 0) return "";
   return `
-    <div class="article-disclaimer" style="background:transparent;">
-      <strong>関連記事</strong>
+    <section class="related-articles">
+      <h2 class="related-title">近い職業の図鑑</h2>
       <ul>
         ${picked.map((a) => `<li><a href="${escapeHtml(a.slug)}.html">${escapeHtml(a.title)}</a></li>`).join("")}
       </ul>
-    </div>`;
+    </section>`;
 }
 
 function buildVoicesSectionHtml(article) {
@@ -174,7 +207,7 @@ function buildVoicesSectionHtml(article) {
     <details class="voices-box" id="voices-box" data-slug="${escapeHtml(article.slug)}">
       <summary class="voices-title">💬 実際に働いている人の声</summary>
       <div class="voices-body">
-      <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、すぐに公開されます。</p>
+      <p class="voices-desc">この職業に就いている(いた)方は、実際に感じたことを教えてください。投稿は匿名で、すぐに公開されます。個人名・会社名など個人や団体を特定できる内容、誹謗中傷にあたる内容は書かないでください。運営者の判断で削除することがあります(<a href="../privacy-policy.html">プライバシーポリシー</a>)。</p>
       <textarea id="voice-input" class="voice-textarea" placeholder="例: 人手不足で有給が取りづらい。でもやりがいはある、など(5〜1000字)" maxlength="1000"></textarea>
       <button type="button" id="voice-submit" class="voice-submit">投稿する</button>
       <p id="voice-status" class="voice-status" hidden></p>
@@ -270,8 +303,13 @@ function hubCtaHtml() {
 
 function buildArticleHtml(article, allArticles) {
   const url = `${site.baseUrl}/articles/${article.slug}.html`;
-  const bodyHtml = markdownToHtml(article.bodyMarkdown);
+  const bodyHtml = addTableOfContents(markdownToHtml(article.bodyMarkdown));
   const publishedIso = article.createdAt;
+  // 公開後に内容を直した記事は、raw JSONに updatedAt(ISO文字列)を入れておくと更新日として表示・構造化データに反映される
+  const modifiedIso = article.updatedAt || publishedIso;
+  const dateHtml = formatDateJa(modifiedIso) !== formatDateJa(publishedIso)
+    ? `${formatDateJa(publishedIso)}公開 ・ ${formatDateJa(modifiedIso)}更新`
+    : formatDateJa(publishedIso);
   const categoryKey = article.category || inferCategory(article);
   const categoryUrl = `${site.baseUrl}/category/${categoryKey}.html`;
 
@@ -280,10 +318,11 @@ function buildArticleHtml(article, allArticles) {
     "@type": "Article",
     headline: article.title,
     description: article.meta,
+    image: `${site.baseUrl}/ogp.png`,
     datePublished: publishedIso,
-    dateModified: publishedIso,
-    author: { "@type": "Organization", name: site.siteName },
-    publisher: { "@type": "Organization", name: site.siteName },
+    dateModified: modifiedIso,
+    author: { "@type": "Organization", name: site.siteName, url: `${site.baseUrl}/operator.html` },
+    publisher: { "@type": "Organization", name: site.siteName, logo: { "@type": "ImageObject", url: `${site.baseUrl}/apple-touch-icon.png` } },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
@@ -310,10 +349,11 @@ ${article.keywords ? `<meta name="keywords" content="${escapeHtml(article.keywor
 <meta property="og:description" content="${escapeHtml(article.meta)}">
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="${escapeHtml(site.siteName)}">
-<meta name="twitter:card" content="summary">
+<meta property="article:published_time" content="${publishedIso}">
+<meta property="article:modified_time" content="${modifiedIso}">
 <meta name="twitter:title" content="${escapeHtml(article.title)}">
 <meta name="twitter:description" content="${escapeHtml(article.meta)}">
-${site.twitterHandle ? `<meta name="twitter:site" content="${escapeHtml(site.twitterHandle)}">` : ""}
+${commonHeadHtml("../")}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -332,19 +372,19 @@ ${gaSnippet()}</head>
 
 <main>
   <nav class="breadcrumb" aria-label="パンくずリスト">
-    <a href="../index.html">図鑑一覧</a> &gt;
+    <a href="../index.html">図鑑一覧</a><span aria-hidden="true">›</span>
     <a href="../category/${categoryKey}.html">${escapeHtml(categoryLabel(categoryKey))}</a>
   </nav>
-  ${buildSummaryBoxHtml(article)}
-  ${buildVoicesSectionHtml(article)}
   <article>
     <header class="article-header">
-      <div class="article-date">${formatDateJa(publishedIso)}</div>
+      <div class="article-date">${dateHtml}</div>
       <h1 class="article-title">${escapeHtml(article.title)}</h1>
     </header>
+    ${buildSummaryBoxHtml(article)}
     <div class="article-body">
       ${bodyHtml}
     </div>
+    ${buildVoicesSectionHtml(article)}
     ${hubCtaHtml()}
     <div class="article-disclaimer">
       本記事は情報提供を目的としており、特定の職業や企業を批判・断定するものではありません。感じ方には個人差があります。本サイトはアフィリエイト広告を利用しています。
@@ -444,34 +484,62 @@ function buildIndexHtml(articles) {
 
   const tabsHtml = sorted.length === 0 ? "" : `
   <div class="category-tabs" role="tablist">
-    <button type="button" class="category-tab is-active" role="tab" data-category="all">すべて<span class="category-tab-count">${sorted.length}</span></button>
+    <button type="button" class="category-tab is-active" role="tab" aria-selected="true" data-category="all">すべて<span class="category-tab-count">${sorted.length}</span></button>
     ${CATEGORIES.map((c) => {
       const count = sorted.filter((a) => (a.category || "eigyo_hanbai") === c.key).length;
       if (count === 0) return "";
-      return `<a href="category/${c.key}.html" class="category-tab" role="tab" data-category="${c.key}">${escapeHtml(c.label)}<span class="category-tab-count">${count}</span></a>`;
+      return `<a href="category/${c.key}.html" class="category-tab" role="tab" aria-selected="false" data-category="${c.key}">${escapeHtml(c.label)}<span class="category-tab-count">${count}</span></a>`;
     }).join("")}
+  </div>`;
+
+  const searchHtml = sorted.length === 0 ? "" : `
+  <div class="article-search">
+    <input type="search" id="article-search-input" placeholder="職業名で検索(例:看護師、エンジニア)" aria-label="職業名・キーワードで検索">
   </div>`;
 
   const listHtml = sorted.length === 0
     ? `<div class="empty-state">まだ記事がありません。近日公開予定です。</div>`
-    : sorted.map((a) => `<div class="article-card-wrap" data-category="${escapeHtml(a.category || "eigyo_hanbai")}">${articleCardHtml(a)}</div>`).join("");
+    : sorted.map((a) => {
+        const searchText = [a.title, a.meta, a.keywords].filter(Boolean).join(" ").toLowerCase();
+        return `<div class="article-card-wrap" data-category="${escapeHtml(a.category || "eigyo_hanbai")}" data-search="${escapeHtml(searchText)}">${articleCardHtml(a)}</div>`;
+      }).join("");
 
   const tabScript = sorted.length === 0 ? "" : `
 <script>
 (function() {
   var tabs = document.querySelectorAll(".category-tab");
   var cards = document.querySelectorAll(".article-card-wrap");
+  var searchInput = document.getElementById("article-search-input");
+  var emptyEl = document.getElementById("article-list-empty");
+  var currentCategory = "all";
+  var currentQuery = "";
+  function applyFilter() {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var matchesCategory = currentCategory === "all" || card.getAttribute("data-category") === currentCategory;
+      var matchesQuery = currentQuery === "" || card.getAttribute("data-search").indexOf(currentQuery) !== -1;
+      card.hidden = !(matchesCategory && matchesQuery);
+      if (!card.hidden) visible++;
+    });
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+  }
   tabs.forEach(function(tab) {
     tab.addEventListener("click", function(e) {
       e.preventDefault();
-      tabs.forEach(function(t) { t.classList.remove("is-active"); });
-      tab.classList.add("is-active");
-      var cat = tab.getAttribute("data-category");
-      cards.forEach(function(card) {
-        card.hidden = cat !== "all" && card.getAttribute("data-category") !== cat;
+      tabs.forEach(function(t) {
+        t.classList.toggle("is-active", t === tab);
+        t.setAttribute("aria-selected", t === tab ? "true" : "false");
       });
+      currentCategory = tab.getAttribute("data-category");
+      applyFilter();
     });
   });
+  if (searchInput) {
+    searchInput.addEventListener("input", function() {
+      currentQuery = searchInput.value.trim().toLowerCase();
+      applyFilter();
+    });
+  }
 })();
 </script>`;
 
@@ -495,7 +563,8 @@ function buildIndexHtml(articles) {
 <meta property="og:title" content="${escapeHtml(site.siteName)} | 職業別・辞めたくなる理由の図鑑">
 <meta property="og:description" content="${escapeHtml(site.description)}">
 <meta property="og:url" content="${site.baseUrl}/">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="${escapeHtml(site.siteName)}">
+${commonHeadHtml("")}
 ${site.googleSiteVerification ? `<meta name="google-site-verification" content="${escapeHtml(site.googleSiteVerification)}">\n` : ""}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -506,7 +575,7 @@ ${gaSnippet()}</head>
 
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="index.html" class="brand">${escapeHtml(site.siteName)}</a>
+    <h1 class="brand-heading"><a href="index.html" class="brand">${escapeHtml(site.siteName)}</a></h1>
     <p class="site-tagline">職業ごとの「辞めたくなる理由」を、データにもとづいて図鑑形式で整理</p>
   </div>
 </header>
@@ -514,8 +583,10 @@ ${gaSnippet()}</head>
 
 <main>
   ${buildQuizHtml()}
+  ${searchHtml}
   ${tabsHtml}
   <div id="article-list" class="article-list">${listHtml}</div>
+  <p id="article-list-empty" class="empty-state" hidden>条件に合う職業が見つかりませんでした。別のキーワードやカテゴリで探してみてください。</p>
 </main>
 
 <footer class="site-footer">
@@ -572,7 +643,7 @@ function buildCategoryPageHtml(categoryDef, articlesInCategory) {
 <meta property="og:description" content="${escapeHtml(description)}">
 <meta property="og:url" content="${url}">
 <meta property="og:site_name" content="${escapeHtml(site.siteName)}">
-<meta name="twitter:card" content="summary">
+${commonHeadHtml("../")}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -591,7 +662,7 @@ ${gaSnippet()}</head>
 
 <main>
   <nav class="breadcrumb" aria-label="パンくずリスト">
-    <a href="../index.html">図鑑一覧</a> &gt; ${escapeHtml(categoryDef.label)}
+    <a href="../index.html">図鑑一覧</a><span aria-hidden="true">›</span><span>${escapeHtml(categoryDef.label)}</span>
   </nav>
   <div class="category-page-header">
     <h1>${escapeHtml(categoryDef.label)}の「辞めたい理由」一覧</h1>
@@ -633,7 +704,7 @@ function buildSitemapXml(articles) {
       .map((c) => ({ loc: `${site.baseUrl}/category/${c.key}.html`, lastmod: today, changefreq: "weekly", priority: "0.6" })),
     ...articles.map((a) => ({
       loc: `${site.baseUrl}/articles/${a.slug}.html`,
-      lastmod: (a.createdAt || today).slice(0, 10),
+      lastmod: (a.updatedAt || a.createdAt || today).slice(0, 10),
       changefreq: "monthly",
       priority: "0.7",
     })),
@@ -657,6 +728,7 @@ function publishArticle(article) {
   const entry = {
     slug: article.slug, title: article.title, meta: article.meta,
     keywords: article.keywords, createdAt: article.createdAt,
+    ...(article.updatedAt ? { updatedAt: article.updatedAt } : {}),
     category: article.category || inferCategory(article),
     tags: article.tags || {},
   };
@@ -679,4 +751,4 @@ function rebuildIndexOnly() {
   fs.writeFileSync(path.join(DOCS_DIR, "sitemap.xml"), buildSitemapXml(articles), "utf8");
 }
 
-module.exports = { publishArticle, readArticleIndex, writeArticleIndex, rebuildIndexOnly, inferCategory, CATEGORIES, TAG_AXES };
+module.exports = { publishArticle, readArticleIndex, writeArticleIndex, rebuildIndexOnly, inferCategory, commonHeadHtml, CATEGORIES, TAG_AXES };
