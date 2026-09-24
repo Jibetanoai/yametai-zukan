@@ -5,6 +5,7 @@ module.exports = {
   baseUrl: "https://jibetanoai.github.io/yametai-zukan",
   description: "職業ごとに「辞めたくなる理由」を、統計データや公的調査にもとづいて図鑑形式で整理するメディアです。転職を考えるときの判断材料として。",
   twitterHandle: null,
+  authorName: "じべた", // 運営者のハンドルネーム(運営者情報・記事の執筆者表示・構造化データに使う)
   googleSiteVerification: "E_oY6GkObFt6waLKSW154p4tl-7QcjyE4fEmFGhzcOg",
   googleAnalyticsId: "G-PXPLS3Y9T7",
   // 「現場の声」投稿機能用(yametai-zukan専用のSupabaseプロジェクト)。
