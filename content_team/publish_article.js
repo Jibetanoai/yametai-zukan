@@ -289,14 +289,53 @@ function buildVoicesScript() {
 </script>`;
 }
 
-// 全記事共通のCTA。将来アフィリエイト提携が決まるまでは、ホームの
-// 「おすすめ職業診断」への導線として使う(提携が決まったら差し替える)。
-function hubCtaHtml() {
+// 提携済みアフィリエイト広告(2026-09-26時点)。リンク・計測タグは各ASPの管理画面で発行したコードそのまま。
+// 文言は広告主の掲載ルールに合わせる: 「転職できる」等の断定、学生・年齢層を狙った訴求、
+// 特定の業種・職種を貶める表現はNG(リクルート系の訴求NGワード一覧より)。
+const PR_PROGRAMS = {
+  recruitAgent: {
+    // ValueCommerce: リクルートエージェント(テキスト広告 ID 2597378)
+    html: `<a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3781578&pid=892712317" rel="nofollow sponsored noopener" target="_blank"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3781578&pid=892712317" height="1" width="1" border="0" alt=""><span class="pr-name">リクルートエージェント</span></a>`,
+    desc: "転職エージェント。求人紹介のほか、書類添削などのサポートもあります",
+  },
+  rikunabiNext: {
+    // ValueCommerce: リクナビNEXT『会員登録』キャンペーン(テキスト広告 ID 2491923)
+    html: `<a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3781578&pid=892712318" rel="nofollow sponsored noopener" target="_blank"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3781578&pid=892712318" height="1" width="1" border="0" alt=""><span class="pr-name">リクナビNEXT</span></a>`,
+    desc: "転職サイト。自分で求人を探せるほか、スカウト登録もできます",
+  },
+  techClips: {
+    // A8.net: TechClipsエージェント(テキスト素材 002)
+    html: `<a href="https://px.a8.net/svt/ejp?a8mat=4BCGFP+3VWVXU+3SWM+5YRHE" rel="nofollow sponsored noopener" target="_blank"><span class="pr-name">【TechClipsエージェント】</span></a><img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BCGFP+3VWVXU+3SWM+5YRHE" alt="" style="position:absolute;">`,
+    desc: "ITエンジニア専門の転職エージェント",
+  },
+  kotora: {
+    // ValueCommerce: コトラ 面談登録プログラム(自由テキスト広告 ID 2844731)
+    html: `<a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3781578&pid=892712319" rel="nofollow sponsored noopener" target="_blank"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3781578&pid=892712319" height="1" width="1" border="0" alt=""><span class="pr-name">コトラ</span></a>`,
+    desc: "金融・IT・コンサル・製造業などのハイクラス転職に強い転職エージェント",
+  },
+};
+
+// カテゴリごとに出す広告。業種横断の2つは全カテゴリ共通で、専門特化のものを先頭に足す。
+const PR_BY_CATEGORY = {
+  it_engineer: ["techClips", "kotora"],
+  jimu_kanri: ["kotora"],
+};
+const PR_COMMON = ["recruitAgent", "rikunabiNext"];
+
+// 記事末尾のCTA。提携済みの転職サービス(PR)と、ホームの「おすすめ職業診断」への導線。
+function hubCtaHtml(categoryKey) {
+  const keys = [...(PR_BY_CATEGORY[categoryKey] || []), ...PR_COMMON];
+  const items = keys
+    .map((k) => `<li>${PR_PROGRAMS[k].html}<span class="pr-desc">${escapeHtml(PR_PROGRAMS[k].desc)}</span></li>`)
+    .join("\n        ");
   return `
     <div class="hub-cta">
-      <p class="hub-cta-label">🔍 おすすめ職業診断</p>
-      <p class="hub-cta-text">自分に合う仕事、簡単な質問に答えるだけで見てみない?</p>
-      <a class="hub-cta-button" href="../index.html#quiz-box">おすすめ職業診断をやってみる →</a>
+      <p class="hub-cta-label">💼 働き方の選択肢を知っておく(PR)</p>
+      <p class="hub-cta-text">今すぐ動くつもりがなくても、どんな求人や相談窓口があるかを知っておくと、続けるか・変えるかを考える材料になります。</p>
+      <ul class="pr-links">
+        ${items}
+      </ul>
+      <p class="hub-cta-sub">自分に合う仕事の傾向を見てみたいときは <a href="../index.html#quiz-box">おすすめ職業診断</a> もどうぞ。</p>
     </div>`;
 }
 
@@ -386,7 +425,7 @@ ${gaSnippet()}</head>
       ${bodyHtml}
     </div>
     ${buildVoicesSectionHtml(article)}
-    ${hubCtaHtml()}
+    ${hubCtaHtml(categoryKey)}
     <div class="article-disclaimer">
       本記事は情報提供を目的としており、特定の職業や企業を批判・断定するものではありません。感じ方には個人差があります。本サイトはアフィリエイト広告を利用しています。
     </div>
